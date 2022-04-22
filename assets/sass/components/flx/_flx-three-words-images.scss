@@ -1,0 +1,51 @@
+.three-words-images {
+    &__container {
+        width: 85.416vw;
+        margin: 0 auto;
+        position: relative;
+
+        img {
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+    &__text {
+        padding-top: 15.625vw;
+        padding-bottom: 22.291vw;
+        width: 58.75vw;
+        margin: 0 auto;
+
+        &-one {
+            text-align: center;
+        }
+
+        &-two {
+            margin: 6.822vw 0;
+        }
+
+        &-three {
+            text-align: end;
+        }
+    }
+
+    &__image-one {
+        top: 0;
+        width: 36.406vw;
+        height: auto;
+    }
+
+    &__image-two {
+        right: 0;
+        top: 15.625vw;
+        width: 20.625vw;
+        height: auto;
+    }
+
+    &__image-three {
+        bottom: 2vw;
+        left: 14.375vw;
+        width: 38.75vw;
+        height: auto;
+    }
+}

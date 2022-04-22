@@ -1,0 +1,32 @@
+@use '../utilities/functions';
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.our-work {
+    background-color: #EAEAE8;
+
+    h2 {
+        padding: 5vw 7vw;
+    }
+
+    &__grid {
+        margin: 0 7vw;
+    }
+
+    &__card {
+        padding-bottom: 2.5rem;
+    }
+}
+
+@include mixins.media(sm) {
+    .our-work {
+        &__grid {
+            width: 70vw;
+            max-width: 1364px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8vw;
+        }
+    }
+}

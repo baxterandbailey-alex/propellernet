@@ -1,0 +1,261 @@
+@use 'sass:math';
+
+//// STANDARD ////
+
+// Specify in px, get rem + px output
+@mixin font-px($pxValue: 1) {
+    font-size: $pxValue * 1px;
+    font-size: math.div($pxValue, 16) * 1rem;
+}
+
+// Brings font size down at smaller screensizes
+@mixin font-res($resValue: 1) {
+    font-size: $resValue * 0.75px;
+    font-size: math.div($resValue, 16) * 0.75rem;
+
+    @include media(sm) {
+        font-size: $resValue * 0.85px;
+        font-size: math.div($resValue, 16) * 0.85rem;
+    }
+
+    @include media(md) {
+        font-size: $resValue * 1px;
+        font-size: math.div($resValue, 16) * 1rem;
+    }
+}
+
+// Breakpoints
+@mixin media($point) {
+
+
+    @if $point==xxl {
+        @media (min-width: 1920px) {
+            @content;
+        }
+    }
+
+    @if $point==xl {
+        @media (min-width: 1440px) {
+            @content;
+        }
+    }
+
+    @if $point==lg {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    } @else if $point==md {
+        @media (min-width: 1024px) {
+            @content;
+        }
+    } @else if $point==sm {
+        @media (min-width: 768px) {
+            @content;
+        }
+    } @else if $point==xs {
+        @media (min-width: 600px) {
+            @content;
+        }
+    }
+}
+
+// Media PX down and up
+@mixin media-max-px($maxWidth) {
+    @media (max-width: #{$maxWidth}px) {
+        @content;
+    }
+}
+
+@mixin media-min-px($minWidth) {
+    @media (min-width: #{$minWidth}px) {
+        @content;
+    }
+}
+
+// Container
+@mixin container($width) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--site-pad);
+    padding-right: var(--site-pad);
+
+    @if $width==s {
+        max-width: calc(1200px + var(--site-pad) + var(--site-pad));
+    } @else if $width==f {
+        max-width: 100%;
+    } @else if $width==w {
+        max-width: calc(1350px + var(--site-pad) + var(--site-pad));
+    } @else if $width==xw {
+        max-width: calc(1520px + var(--site-pad) + var(--site-pad));
+    } @else if $width==n {
+        max-width: calc(1030px + var(--site-pad) + var(--site-pad));
+    } @else if $width==xn {
+        max-width: calc(900px + var(--site-pad) + var(--site-pad));
+    }
+}
+
+// Custom container
+@mixin container-px($pxwidth) {
+    width: 100%;
+    max-width: calc(#{$pxwidth}px + var(--site-pad) + var(--site-pad));
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--site-pad);
+    padding-right: var(--site-pad);
+}
+
+// Aspect ratio
+@mixin aspect-ratio($width, $height) {
+    position: relative;
+
+    &:before {
+        display: block;
+        content: '';
+        width: 100%;
+        padding-top: math.div($height, $width) * 100%;
+    }
+}
+
+// Padding
+@mixin p-vert($padding) {
+    padding-top: (math.div($padding, 2) * 1rem);
+    padding-bottom: (math.div($padding, 2) * 1rem);
+
+    @include media(md) {
+        padding-top: ($padding * 1rem);
+        padding-bottom: ($padding * 1rem);
+    }
+}
+
+@mixin p-hori($padding) {
+    padding-left: (math.div($padding, 2) * 1rem);
+    padding-right: (math.div($padding, 2) * 1rem);
+
+    @include media(md) {
+        padding-left: ($padding * 1rem);
+        padding-right: ($padding * 1rem);
+    }
+}
+
+@mixin p-all($padding) {
+    padding: (math.div($padding, 2) * 1rem);
+
+    @include media(md) {
+        padding: ($padding * 1rem);
+    }
+}
+
+@mixin p-either($paddingVert, $paddingHoriz) {
+    padding: (math.div($paddingVert, 2) * 1rem) (math.div($paddingHoriz, 2) * 1rem);
+
+    @include media(md) {
+        padding: ($paddingVert * 1rem) ($paddingHoriz * 1rem);
+    }
+}
+
+@mixin p-each($paddingTop, $paddingRight, $paddingBottom, $paddingLeft) {
+    padding: (math.div($paddingTop, 2) * 1rem) (math.div($paddingRight, 2) * 1rem) (math.div($paddingBottom, 2) * 1rem)
+        (math.div($paddingLeft, 2) * 1rem);
+
+    @include media(md) {
+        padding: ($paddingTop * 1rem) ($paddingRight * 1rem) ($paddingBottom * 1rem) ($paddingLeft * 1rem);
+    }
+}
+
+@mixin p-top($padding) {
+    padding-top: (math.div($padding, 2) * 1rem);
+
+    @include media(md) {
+        padding-top: ($padding * 1rem);
+    }
+}
+
+@mixin p-bot($padding) {
+    padding-bottom: (math.div($padding, 2) * 1rem);
+
+    @include media(md) {
+        padding-bottom: ($padding * 1rem);
+    }
+}
+
+@mixin p-left($padding) {
+    padding-left: (math.div($padding, 2) * 1rem);
+
+    @include media(md) {
+        padding-left: ($padding * 1rem);
+    }
+}
+
+@mixin p-right($padding) {
+    padding-right: (math.div($padding, 2) * 1rem);
+
+    @include media(md) {
+        padding-right: ($padding * 1rem);
+    }
+}
+
+// Margin
+@mixin m-top($margin) {
+    margin-top: (math.div($margin, 2) * 1rem);
+
+    @include media(md) {
+        margin-top: ($margin * 1rem);
+    }
+}
+
+@mixin m-bot($margin) {
+    margin-bottom: (math.div($margin, 2) * 1rem);
+
+    @include media(md) {
+        margin-bottom: ($margin * 1rem);
+    }
+}
+
+@mixin m-right($margin) {
+    margin-right: (math.div($margin, 2) * 1rem);
+
+    @include media(md) {
+        margin-right: ($margin * 1rem);
+    }
+}
+
+@mixin m-left($margin) {
+    margin-left: (math.div($margin, 2) * 1rem);
+
+    @include media(md) {
+        margin-left: ($margin * 1rem);
+    }
+}
+
+@mixin gap($gap) {
+    gap: (math.div($gap, 2) * 1rem);
+
+    @include media(md) {
+        gap: ($gap * 1rem);
+    }
+}
+
+// Responsive property and value
+@mixin res-prop($property, $val, $unit) {
+    #{$property}: math.div($val, 2) + $unit;
+
+    @include media(sm) {
+        #{$property}: $val + $unit;
+    }
+}
+
+//  Background svg mixin
+@mixin background-svg($svg) {
+    background-image: svg-url($svg);
+}
+
+// Grid
+
+@mixin grid($gap, $cols) {
+    display: grid;
+    grid-template-columns: repeat($cols, 1fr);
+    gap: $gap;
+}
+
+//// THEME SPECIFIC ////

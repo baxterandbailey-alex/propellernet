@@ -1,0 +1,119 @@
+@use '../../utilities/mixins';
+
+.feature-block {
+
+    &__img {
+        width: 100%;
+        margin: 0 auto;
+        img {
+           
+            width: 100%;
+            object-fit: contain;
+            height: auto;
+        }
+    }
+
+    &__content {
+        width: 90%;
+        padding-top: 10%;
+        margin: 0 auto;
+    }
+
+    &__header {
+        margin-bottom: 2.5rem;
+    }
+
+    &__text {
+        p, a {
+            margin-bottom: 2.5rem;
+        }
+    }
+}
+
+@include mixins.media(sm) {
+    .feature-block {
+
+        &__grid {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        }
+   
+
+
+        @include mixins.p-top(13.375);
+        @include mixins.p-bot(11.0625);
+    
+    
+        &__content {
+            padding-top: 0;
+        }
+    
+        &__text {
+            width: 27.916vw;
+            margin-left: auto;
+            margin-right: 2.5rem;
+    
+            p {
+                @include mixins.m-top(4.375);
+                @include mixins.m-bot(3.125);
+            }
+        }
+    
+        &__img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .reverse {
+        flex-direction: row-reverse;
+
+        .feature-block__grid {
+            grid-template-columns: 3fr 2fr;
+            .feature-block__img {
+                order: 1
+            }
+
+            .feature-block__content {
+                order: -1
+            }
+        }
+    
+        .feature-block__img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@include mixins.media(md) {
+    .feature-block {
+        &__grid {
+        grid-template-columns: 2fr 4fr;
+        gap: 50px;
+        }
+    }
+
+    .reverse {
+        .feature-block__grid {
+            grid-template-columns: 4fr 2fr;
+        }
+    }
+}
+
+@include mixins.media(lg) {
+    
+    .feature-block {
+        &__header {
+            width: 42.29vw;
+        }
+    }
+}
+
+@include mixins.media(xxl) {
+    
+    .feature-block__grid {
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+}

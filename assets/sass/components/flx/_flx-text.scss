@@ -1,0 +1,22 @@
+@use '../../utilities/mixins';
+
+.flx-text {
+    @include mixins.container(n);
+    margin-top: 10vmin;
+    margin-bottom: 10vmin;
+
+    .heading, .subheading {
+        margin: 0 0 2.5vmin;
+        line-height: 1.2;
+    }
+}
+
+.flx-text_wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5vmin;
+
+    @include mixins.media(md) {
+        grid-template-columns: 1fr 1fr;
+    }
+}

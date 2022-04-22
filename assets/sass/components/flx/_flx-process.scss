@@ -1,0 +1,100 @@
+@use '../../utilities/mixins';
+
+.process {
+
+    padding-bottom: 9vw;
+    &__title {
+        padding-left: 7vw;
+        padding-top: 5.572vw;
+    }
+
+    &__textbox  {
+        width: 45vw;
+        margin: 11vw auto 14vw auto;
+        border-left: solid 1px #707070;
+        padding-left: 2vw;
+
+        p:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__casestudy {
+        position: relative;
+        width: 71.25vw;
+        margin: 0 auto;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2rem;
+        padding-bottom: 8.854vw;
+
+        p {
+            z-index: 10;
+        }
+    }
+
+    &__casestudyName {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+
+        p {
+            z-index: 1;
+            @include mixins.font-res(200);
+        }
+
+
+        img {
+            width: 1.5rem;
+            z-index: 1;
+        }
+    }
+
+    &__link {
+
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        padding-bottom: 4.375vw;
+        padding-top: 8.541vw;
+
+        a {
+            line-height: 1;
+            margin-right: 1rem;
+            z-index: 1;
+        }
+
+        img {
+            z-index: 1;
+        }
+    }
+
+    &__backBtn {
+        display: flex;
+        align-items: center;
+        padding-left: 7.291vw;
+        padding-top: 2rem;
+
+        img {
+            margin-right: 1rem;
+        }
+    }
+}

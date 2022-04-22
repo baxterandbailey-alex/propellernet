@@ -1,0 +1,130 @@
+@use '../utilities/mixins';
+
+footer#site-footer {
+    padding: var(--site-space-res);
+    background: #0C2E2B;
+    padding: 5%;
+
+    img {
+        margin-bottom: 2rem;
+    }
+
+    a,
+    p {
+        color: white;
+        transition: color 0.4s;
+    }
+
+    a:hover {
+        color: #D2FD7F;
+        transition: color 0.4s;
+    }
+
+    .footer {
+        &__header {
+            font-weight: bold;
+            margin-bottom: 14px;
+            border-bottom: 2px solid #D2FD7F;
+            width: 50%;
+            
+        }
+
+        &__contact,
+        &__links,
+        &__policys,
+        &__policys--links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__links {
+            margin-bottom: 2rem;
+
+            a {
+                margin-bottom: 0.3rem;
+            }
+        }
+
+        &__policys {
+            margin-top: 2rem;
+
+            img {
+                width: 7rem;
+                height: auto;
+                margin-top: 2rem;
+            }
+        }
+
+    }
+}
+
+.cta {
+    text-align: center;
+    padding-top: 8.385vw;
+    padding-bottom: 7.604vw;
+
+    p {
+        padding-bottom: 2.291vw;
+    }
+}
+
+@include mixins.media(sm) {
+    footer#site-footer {
+        padding: 6.875vw 6.302vw 2.552vw 7.291vw;
+        .footer {
+            &__header {
+                width: 100%;
+            }
+            &__grid{
+                width: 90%;
+                @include mixins.grid(50px, 3);
+            }
+
+            &__policys {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                img {
+                    margin: 0;
+                }
+
+            }
+        }
+    }
+}
+
+@include mixins.media(md) {
+    footer#site-footer {
+
+        .footer {
+            &__grid{
+                width: 70%;
+                @include mixins.grid(50px, 3);
+            }
+
+            &__policys {
+                &--links {
+                    flex-direction: row;
+
+                    p,
+                    a {
+                        margin-right: 5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mixins.media(lg) {
+    footer#site-footer {
+        .footer {
+
+            &__grid{
+                width: 50%;
+            }
+        }
+    }
+}
+

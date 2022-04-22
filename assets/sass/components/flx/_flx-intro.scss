@@ -1,0 +1,70 @@
+@use '../../utilities/mixins';
+
+    .intro {
+        padding: 7vw;
+
+        &-title {
+            margin-bottom: 2.5rem;
+        }
+
+        .font-intro {
+            @include mixins.font-res(60);
+        }
+
+        &__what-we-do-title {
+            border-bottom: 1px solid #707070;
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+
+        &__what-we-do-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            p {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+@include mixins.media(sm) {
+    .intro {
+        display: flex;
+        justify-content: space-between;
+        padding: 10.416vw 14.479vw 15.520vw 7.291vw;
+
+        &-title {
+            width: 35.104vw;
+            margin-bottom: unset;
+        }
+
+        &-text {
+            width: 31.509vw;
+            padding-left: 3.593vw;
+            border-left: 1px solid #707070;
+        }
+
+        &__what-we-do {
+            width: 31.509vw;
+            padding-left: 3.593vw;
+        }
+
+        .offset {
+            margin-top: 14.895vw;
+        }
+    }
+}
+
+@include mixins.media(lg) {
+    .intro {
+        .font-intro {
+            @include mixins.font-res(70);
+        }
+        
+        &__what-we-do-container {
+            width: 70%;
+        }
+    }
+
+
+}

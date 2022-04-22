@@ -1,0 +1,119 @@
+@use '../utilities/functions';
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+#site-header {
+    position: relative;
+}
+
+.header {
+
+    &__background {
+        
+            width: 100%;
+            height: 200vw;
+            max-height: 100vh;
+            object-fit: cover;
+        
+    }
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+
+        a {
+            padding-bottom: 5px;
+            padding-right: 2.5rem;
+            border-bottom: 1px solid white;
+
+        }
+    }
+
+    &__subText {
+        width: 80%;
+        margin: 2.5rem auto;
+    }
+
+    &__quote {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        align-items: center;
+        
+        h2 {
+            flex: 1;
+            line-height: 1;
+            @include mixins.font-res(80);
+        }
+    }
+
+    &__btnContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        img {
+            padding-left: 0.8rem;
+        }
+    }
+}
+
+
+@include mixins.media(sm) {
+    .header {
+        &__background {
+            height: 58rem;
+        }
+
+        &__quote {
+            width: 80%;
+            
+            h2 {
+                @include mixins.font-res(90);
+            }
+        }
+
+        &__subText {
+            width: 50%;
+        }
+    }
+}
+
+@include mixins.media(md) {
+    .header {
+        &__quote {
+            width: 60%;
+        }
+        
+    }
+}
+
+@include mixins.media(lg) {
+    .header {
+        &__quote {
+            width: 63.854vw;
+            max-width: 76rem;
+
+            h2 {
+                width: 30%;
+                margin: 0 7rem;
+            }
+        }
+        
+    }
+}
+
+@include mixins.media(xl) {
+    .header {
+        &__quote {
+            h2 {
+                margin: 0 12.5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@use '../utilities/functions';
+@use '../utilities/mixins';
+
+// Container
+.container {
+    @include mixins.container(s);
+
+    &.fluid {
+        @include mixins.container(f);
+    }
+
+    &.wide {
+        @include mixins.container(w);
+    }
+
+    &.x-wide {
+        @include mixins.container(xw);
+    }
+
+    &.narrow {
+        @include mixins.container(n);
+    }
+
+    &.x-narrow {
+        @include mixins.container(xn);
+    }
+}

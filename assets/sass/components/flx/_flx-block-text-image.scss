@@ -1,0 +1,99 @@
+@use '../../utilities/mixins';
+
+.block-text-image {
+    position: relative;
+    margin-top: 2.8125vw;
+    padding: 10vmin 0;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 45%;
+        height: 45%;
+        background: #eee;
+    }
+
+    &__content {
+        display: grid;
+        max-width: 1350px;
+        margin: 0 auto;
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 0 2.5rem;
+    }
+
+    &__text-box {
+        z-index: 1;
+        h4 {
+            margin-bottom: 2rem;
+            margin-top: 1rem;
+        }
+    }
+
+    &__image-box {
+        z-index: 1;
+  
+        align-self: center;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+@include mixins.media(sm) {
+    .block-text-image {
+        &__content {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+
+        &__text-box {
+            padding-left: 8vw;
+     
+        }
+
+        &:before {
+            height: unset;
+        }
+
+        &__text-box {
+            h4 {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .reverse {
+        &:before {
+            left: unset;
+            right: 0;
+        }
+        .block-text-image {
+    
+                &__text-box {
+                    z-index: 1;
+                    padding-left: 0;
+                    padding-right: 8vw;
+                    order: -1
+                }
+            
+                &__image-box {
+                    order: 1
+                }
+        }
+    }
+}
+
+@include mixins.media(md) {
+    .block-text-image {
+        &__text-box {
+            h4 {
+                margin-bottom: 3.6rem;
+            }
+        }
+    }
+}

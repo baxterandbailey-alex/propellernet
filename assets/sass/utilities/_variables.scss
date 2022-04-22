@@ -1,0 +1,24 @@
+// Asset path
+$theme: 'bbwp-starter-main';
+$theme__path: '/wp-content/themes/#{$theme}';
+$theme__path-img: '#{$theme__path}/assets/img';
+
+// Background Colour Classes
+
+$colors: (
+    "mid-green": #51827F,
+    "dark-green": #0C2E2B,
+    "light-green": #CDFF75,
+    "dark-gray": #707070,
+    "light-gray": #EAEAE8,
+    "white": #FFFFFF
+);
+
+@each $key, $val in $colors {
+    .bg-#{$key} {
+        background-color: $val;
+    }
+}
+
+$light_green: #CDFF75;
+

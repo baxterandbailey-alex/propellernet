@@ -1,0 +1,94 @@
+@use '../../utilities/mixins';
+
+.testimonial {
+    @include mixins.p-top(10.562);
+    @include mixins.p-bot(8.562);
+    
+    &__container {
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    &__text-box {
+        text-align: center;
+        margin:  0 auto;
+    }
+
+    &__left-bracket {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+    }
+
+    &__right-bracket {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+    }
+
+    &__text {
+        width: 80%;
+        margin: 10px auto;
+        line-height: 1;
+        padding-top: 4.5rem;
+        @include mixins.font-res(22);
+
+        div {
+            padding-top: 2.5rem;
+            padding-bottom: 1rem;
+            p {
+                @include mixins.font-res(22);
+            }
+        }
+    }
+}
+
+@include mixins.media(sm) {
+
+    .testimonial {
+        @include mixins.p-top(10.562);
+        @include mixins.p-bot(8.562);
+
+        &__container {
+            width: 80%;
+            @include mixins.p-bot(1.062);
+            @include mixins.p-top(4.625);
+        }
+
+        &__text-box {
+            width: 80%;
+        }
+
+
+
+        &__author {
+            @include mixins.m-top(2.5);
+            @include mixins.m-bot(1.062);
+        }
+
+        &__text {
+            @include mixins.font-res(40);
+        }
+    }
+}
+
+@include mixins.media(xl) {
+
+    .testimonial {
+
+        &__container {
+            width: 56.666vw;
+            max-width: 68rem;
+        }
+
+        &__text-box {
+            width: 42.291vw;
+            max-width: 51rem;
+        }
+    }
+}

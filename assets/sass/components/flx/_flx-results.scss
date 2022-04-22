@@ -1,0 +1,71 @@
+@use '../../utilities/mixins';
+
+
+.results {
+    padding: 5.208vw 7.291vw 11.979vw 7.291vw;
+
+    &__numbers {
+        @include mixins.font-res(150);
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2.5rem;
+
+        img {
+            height: 80%;
+        }
+    }
+
+    &__text-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        p {
+            text-align: center;
+            line-height: 1;
+        }
+    }
+}
+
+@include mixins.media(sm) {
+    .results {
+
+        &__numbers {
+            @include mixins.font-res(90);
+        }
+        &__container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 7.187vw;
+        }
+    }
+}
+
+@include mixins.media(lg) {
+    .results {
+
+        &__numbers {
+            @include mixins.font-res(120);
+        }
+    }
+}
+
+@include mixins.media(xl) {
+    .results {
+
+        &__numbers {
+            @include mixins.font-res(150);
+        }
+
+        &__text-box {
+            width: 70%;
+        }
+    }
+
+}

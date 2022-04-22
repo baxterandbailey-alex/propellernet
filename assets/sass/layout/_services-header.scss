@@ -1,0 +1,35 @@
+@use '../utilities/functions';
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.service-header {
+    background-color: #{variables.$light_green};
+    padding: 10rem 7vw 4rem 7vw;
+
+    &__image {
+        display: flex;
+        margin-bottom: 5.8rem;
+    }
+
+    &__bracket {
+        width: 1.6rem;
+    }
+
+    &__icon {
+        object-fit: contain;
+
+        margin: auto 1.1rem;
+    }
+
+    &__service {
+        color: #51827F;
+    }
+}
+
+@include mixins.media(sm) {
+    .service-header {
+        &__image {
+            margin-left: 61.385vw;
+        }
+    }
+}

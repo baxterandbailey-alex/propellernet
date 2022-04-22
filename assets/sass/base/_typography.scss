@@ -1,0 +1,309 @@
+@use '../utilities/functions';
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+    color: var(--clr-secondary);
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-style: normal;
+    font-size: min(max(15px, 2vw), 18px);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h1,
+.h1 {
+    @include mixins.font-res(48);
+}
+
+h2,
+.h2 {
+    @include mixins.font-res(36);
+}
+
+h3,
+.h3 {
+    @include mixins.font-res(28);
+}
+
+h4,
+.h4 {
+    @include mixins.font-res(22);
+}
+
+
+// Standardises typography rhythm and flow where needed
+.rich-text {
+    line-height: 1.6;
+
+    @include mixins.media(md) {
+        line-height: 1.8;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0 0 1.5rem;
+        line-height: 1.2;
+    }
+
+    p {
+        margin: 0 0 1.5rem;
+
+        &.small-text {
+            font-size: 75%;
+        }
+    }
+
+    // Links
+    a {
+        color: var(--highlight-darker);
+        text-decoration: underline;
+
+        &:visited {
+            color: var(--highlight-darker);
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: var(--highlight-lighter);
+        }
+    }
+
+    blockquote {
+        margin: 3rem 1.5rem;
+        padding-left: 1.5rem;
+        border-left: 2px solid var(--highlight);
+        font-size: 85%;
+
+        > p {
+            margin: 0 0 0.75rem;
+        }
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    // Lists
+    ol {
+        list-style: decimal;
+        margin: 0 0 1.5rem 0;
+        padding-left: 1.25rem;
+
+        li {
+            margin-bottom: 1rem;
+
+            &::marker {
+                color: var(--highlight-darker);
+            }
+        }
+    }
+
+    ul {
+        list-style: disc;
+        margin: 0 0 1.5rem;
+        padding-left: 1.5rem;
+
+        li {
+            margin-bottom: 1rem;
+
+            &::marker {
+                color: var(--highlight-darker);
+            }
+        }
+    }
+
+    li > ul,
+    li > ol {
+        margin-bottom: 0;
+        margin-left: 1.5rem;
+    }
+
+    dt {
+        font-weight: 700;
+    }
+
+    dd {
+        margin: 0 1.5rem 1.5rem;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 0 1.5rem;
+
+        thead {
+            background: var(--clr-secondary);
+            color: #f6f6f6;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+        }
+
+        td:not(:last-child) {
+            border-right: 1px solid #ccc;
+        }
+
+        tbody {
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            background: var(--clr-white-off);
+        }
+
+        tbody tr:nth-child(even) {
+            background: var(--clr-grey-light);
+        }
+    }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Site Fonts
+
+@font-face {
+    font-family: 'beyondInfinity';
+    src: url('#{variables.$theme__path}/fonts/beyondinfinity.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'freight';
+    src: url("#{variables.$theme__path}/fonts/FreightText-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'freightItalic';
+    src: url("#{variables.$theme__path}/fonts/Freight-Italic.otf" ) format("opentype");
+}
+
+@font-face {
+    font-family: 'baseticaLight';
+    src: url('#{variables.$theme__path}/fonts/Basetica-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'baseticaMedium';
+    src: url('#{variables.$theme__path}/fonts/Basetica-Medium.woff') format('woff');
+}
+
+body {
+    font-family: 'baseticaLight';
+}
+
+.font-beyondInfinity {
+    font-family: 'beyondInfinity';
+}
+
+.font-freight {
+    font-family: 'freight';
+}
+
+.font-freightItalic {
+    font-family: 'freightItalic';
+}
+
+.font-baseticaLight {
+    font-family: 'baseticaLight';
+}
+
+.font-baseticaMedium {
+    font-family: 'baseticaMedium';
+}
+
+.font-reg {
+    @include mixins.font-res(22);
+}
+
+.font-xl {
+    @include mixins.font-res(90);
+    line-height: 1.1;
+
+    em {
+        font-family: 'freightItalic';
+    }
+}
+
+.font-intro {
+    @include mixins.font-res(70);
+}
+
+.font-text-title {
+    @include mixins.font-res(60);
+}
+
+.font-large {
+    @include mixins.font-res(40);
+}
+
+.font-mid {
+    @include mixins.font-res(25);
+}
+
+.font-small {
+    @include mixins.font-res(16);
+}
+
+.three-words-images__text {
+    p {
+        @include mixins.font-res(150);
+    }
+}
+
+.white-text {
+    color: white;
+}
+
+// Buttons
+
+.btn {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #102E2B;
+    border-radius: 25px;
+    padding: 12px 19px 15px 19px;
+    @include mixins.font-res(16);
+    width: 14rem;
+
+    &:after {
+        content: url('#{variables.$theme__path}/assets/image/btn-arrow.png');
+        padding-top: 2px;
+    }   
+}

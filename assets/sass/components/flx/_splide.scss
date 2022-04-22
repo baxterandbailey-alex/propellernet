@@ -1,0 +1,89 @@
+@use '../../utilities/mixins';
+
+.splide {
+    &__arrow {
+        display: none;
+    }
+
+    &__slide {
+
+        position: relative;
+        .splide__img, .splide__img > img {
+            width: 100%;
+            height: 80.739vw;
+        }
+
+        .splide__title,
+        .splide__link {
+            position: absolute;
+            z-index: 10;
+            bottom: 2rem;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white
+        }
+
+        .splide__title {
+            top: 50%;
+            display: flex;
+            align-items: center;
+
+            p {
+                @include mixins.font-res(100);
+            }
+            
+            img {
+                height: 80%;
+            }
+        }
+
+        .splide__link {
+            display: flex;
+            align-items: center;
+
+            a {
+                line-height: 1;
+            }
+
+            img {
+                padding-left: 0.8rem;
+            }
+        }
+    }
+
+    &__pagination__page.is-active {
+        background: white;
+        height: 16px;
+        width: 16px;
+        transform: scale(1);
+        
+    }
+
+    &__pagination__page {
+        background: transparent;
+        border: 1px solid white;
+        height: 16px;
+        width: 16px;
+        opacity: 1;
+        margin: 8px;
+    }
+}
+
+@include mixins.media(sm) {
+    .splide {
+        &__slide {
+
+            position: relative;
+            .splide__img, .splide__img > img {
+                width: 100%;
+                height: 54.739vw;
+            }
+
+            .splide__title {    
+                p {
+                    @include mixins.font-res(300);
+                }
+            }
+        }
+    }
+}

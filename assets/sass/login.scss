@@ -1,0 +1,54 @@
+// Variables
+:root {
+    --bbwp-link: #444;
+    --bbwp-link-hover: #222;
+}
+
+body {
+    color: var(--bbwp-link);
+    background: #f6f6f6;
+}
+a {
+    color: var(--bbwp-link);
+}
+a:active,
+a:hover {
+    color: var(--bbwp-link-hover);
+}
+
+// Removes WP logo and sets styling for text only name
+.login {
+    h1 {
+        text-align: left;
+
+        a {
+            display: block;
+            width: 100%;
+            background-image: none;
+            text-indent: 0;
+            height: auto;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--bbwp-link);
+
+            &:hover {
+                color: var(--bbwp-link-hover);
+            }
+        }
+    }
+
+    // Form
+    form {
+        filter: grayscale(1);
+        border-radius: 4px; // Brings it in line with input styling
+        box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+    }
+
+    // Links
+    #backtoblog a:hover,
+    #nav a:hover,
+    h1 a:hover {
+        color: var(--bbwp-link-hover);
+    }
+}

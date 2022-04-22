@@ -1,0 +1,52 @@
+.contentSlider {
+
+    h3 {
+       padding-left: 7vw; 
+       padding-top: 6vw;
+    }
+
+    &__slider {
+        padding-top: 8vw;
+        padding-bottom: 12vw;
+        
+
+        h4 {
+            margin-bottom: 2.3rem;
+        }
+    }
+
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .splide-two {
+        position: relative;
+
+        .splide__pagination {
+            display: none;
+        }
+    }
+
+    .splide__slide figure, .splide__slide img {
+        height: 28vw;
+        width: 28vw;
+        margin-bottom: 2.3rem;
+    }
+
+    .splide__arrows {
+        position: absolute;
+        bottom: -40px;
+        width: 100vw;
+    }
+
+    .splide__arrow {
+        display: block;
+        background: white;
+
+        &--prev {
+            display: none;
+        }
+    }
+}

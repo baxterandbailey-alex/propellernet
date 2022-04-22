@@ -1,0 +1,46 @@
+// CSS custom properties
+
+// Colour
+:root {
+    --clr-primary: #51827F;
+    --clr-secondary:  #0C2E2B
+    --clr-tertiary: #707070;
+
+    --clr-white: #ffffff;
+    --clr-white-off: #f6f6f6;
+    --clr-grey-light: #eeeeee;
+    --clr-grey-mid: #dddddd;
+
+    --clr-blakc: #0C2E2B
+    --clr-blakc: #0C2E2B
+
+    --clr-light-green: #CDFF75;
+}
+
+// Typography
+:root {
+    --font-main: 'Work Sans', sans-serif;
+    --font-heading: 'Work Sans', sans-serif;
+}
+
+// Spacing etc.
+:root {
+    --site-radius: 8px;
+    --site-pad: 20px;
+    --site-space-res: 0.5rem;
+    --nu-res: 0.5;
+}
+
+@media (min-width: 768px) {
+    :root {
+        --nu-res: 0.75;
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --site-pad: 40px;
+        --site-space-res: 1rem;
+        --nu-res: 1;
+    }
+}

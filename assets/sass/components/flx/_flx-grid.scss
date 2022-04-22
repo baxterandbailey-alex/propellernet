@@ -1,0 +1,103 @@
+@use '../../utilities/mixins';
+
+.grid {
+    &__title {
+        margin-left: 7.291vw;
+        @include mixins.m-bot(5.75);
+    }
+
+    &__text {
+        margin-left: 14.885vw;
+        @include mixins.m-bot(10.062);
+        width: 49vw;
+    }
+
+    &__conatiner {
+        width: 86.729vw;
+        margin: 0 auto;
+        align-items: baseline;
+    }
+
+    &-item {
+        &__img {
+            margin: 2.75rem 0;
+            img {
+                margin: 0 auto;
+            }
+        }
+
+        &__title {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        &__text {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@include mixins.media(sm) {
+    .grid {
+
+        &-item {
+            &__img {
+                img {
+                    margin: unset;
+                }
+            }
+    
+            &__title {
+                text-align: start;
+            }
+        }
+
+        @include mixins.p-top(6.187);
+        @include mixins.p-bot(12.75);
+
+        &__2 {
+            @include mixins.grid(50, 2);
+        }
+
+        &__3 {
+            @include mixins.grid(100px, 2);
+        }
+
+        &__4 {
+            @include mixins.grid(50, 2);
+            align-items: center;
+
+            .grid-item {
+                width: 10.364vw;
+            }
+        }
+    }
+}
+
+@include mixins.media(md) {
+    .grid {
+        &__conatiner {
+            width: 65.729vw;
+        }
+
+        @include mixins.p-top(6.187);
+        @include mixins.p-bot(12.75);
+
+        &__2 {
+            @include mixins.grid(50, 2);
+        }
+
+        &__3 {
+            @include mixins.grid(100px, 3);
+        }
+
+        &__4 {
+            @include mixins.grid(50, 4);
+            align-items: center;
+
+            .grid-item {
+                width: 10.364vw;
+            }
+        }
+    }
+}
