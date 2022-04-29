@@ -23,7 +23,7 @@ $bCorpLogo = get_field('b_corp_logo', 'option');
 </main>
 <section class="cta bg-light-green">
     <p class="cta__text font-large font-freight"><?php echo $ctaText; ?></p>
-    <a class="btn" href="<?php echo $ctaLink ?>">GET IN TOUCH</a>
+    <a class="btn-rev" href="<?php echo $ctaLink ?>">GET IN TOUCH</a>
 </section>
 <footer id="site-footer" class="bg-dark-green">
 

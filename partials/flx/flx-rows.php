@@ -92,8 +92,24 @@ elseif (get_row_layout() == 'flx_results') :
     get_template_part('partials/flx/flx', 'results');
 
 
-// Process
+// PROCESS
 elseif (get_row_layout() == 'flx_process') :
     get_template_part('partials/flx/flx', 'process');
+
+//  CATEGORIES
+elseif (get_row_layout() == 'flx_insight_categories') :
+    get_template_part('partials/flx/flx', 'insight-categories');
+
+//  CONTACT US
+elseif (get_row_layout() == 'flx_contact_us') :
+    get_template_part('partials/flx/flx', 'contact-us');
+
+//  WORK LINK
+elseif (get_row_layout() == 'flx_work_link') :
+    get_template_part('partials/flx/flx', 'work-link');
+
+//  CLIMATE TARGETS
+elseif (get_row_layout() == 'flx_climate_targets') :
+    get_template_part('partials/flx/flx', 'climate-targets');
 
 endif;

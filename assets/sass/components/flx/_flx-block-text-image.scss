@@ -1,9 +1,10 @@
 @use '../../utilities/mixins';
+@use '../../utilities/variables';
 
 .block-text-image {
     position: relative;
-    margin-top: 2.8125vw;
     padding: 10vmin 0;
+    margin-bottom: -1px;
 
     &:before {
         content: "";
@@ -11,10 +12,10 @@
         top: 0;
         left: 0;
         bottom: 0;
-        width: 45%;
-        height: 45%;
-        background: #eee;
+        width: 13rem;
+        height: 13rem;
     }
+
 
     &__content {
         display: grid;
@@ -23,6 +24,7 @@
         grid-template-columns: 1fr;
         gap: 0;
         padding: 0 2.5rem;
+        @include mixins.m-bot(3.75);
     }
 
     &__text-box {
@@ -44,6 +46,7 @@
     }
 }
 
+
 @include mixins.media(sm) {
     .block-text-image {
         &__content {
@@ -58,6 +61,8 @@
 
         &:before {
             height: unset;
+            @include mixins.m-bot(3.75);
+            width: 45%;
         }
 
         &__text-box {
@@ -71,6 +76,8 @@
         &:before {
             left: unset;
             right: 0;
+            @include mixins.m-top(3.75);
+            margin-bottom: 0;
         }
         .block-text-image {
     
@@ -83,6 +90,11 @@
             
                 &__image-box {
                     order: 1
+                }
+
+                &__content {
+                    @include mixins.m-top(3.75);
+                    margin-bottom: 0;
                 }
         }
     }
@@ -97,3 +109,12 @@
         }
     }
 }
+
+
+// .page-id-197 {
+//     .bg-mid-green {
+//         &:before {
+//             background: red;
+//         }
+//     }
+// }

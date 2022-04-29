@@ -37,7 +37,7 @@ function project_custom_posts() {
 			'singular_name' => 'Project',
 		),
 		'public' => true,
-      
+        'taxonomies'  => array( 'category' ),
 		'has_archive' => true,
 		'menu_icon' => 'dashicons-portfolio',
         'supports' => array('title', 'thumbnail', 'custom-fields', 'excerpt'),
@@ -48,3 +48,25 @@ function project_custom_posts() {
 }
 
 add_action('init', 'project_custom_posts');
+
+// TEAM
+
+function team_custom_posts() {
+
+	$args = array(
+		'labels' => array (
+			'name' => 'Team',
+			'singular_name' => 'Team',
+		),
+		'public' => true,
+      
+		'has_archive' => true,
+		'menu_icon' => 'dashicons-portfolio',
+        'supports' => array('title', 'thumbnail', 'custom-fields', 'excerpt'),
+        'rewrite'   => array('slug' => 'meet-the-team'),
+	);
+
+	register_post_type( 'team', $args);
+}
+
+add_action('init', 'team_custom_posts');

@@ -5,9 +5,13 @@
     $wordOne = get_sub_field('word_one');
     $wordTwo = get_sub_field('word_two');
     $wordThree = get_sub_field('word_three');
+    $title = get_sub_field('title');
 ?>
 
 <section class="three-words-images">
+    <?php if ($title) :?>
+        <h4 class="three-words-images__title font-freight font-large"><?php echo $title; ?></h4>
+    <?php endif; ?>
     <div class="three-words-images__container">
         <div class="three-words-images__text">
             <p class="three-words-images__text-one font-freight"><?php echo $wordOne; ?></p>

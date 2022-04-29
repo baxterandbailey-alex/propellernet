@@ -1,0 +1,115 @@
+@use '../../utilities/mixins';
+
+.climate {
+    @include mixins.p-top(6.3);
+    @include mixins.p-bot(16.3);
+
+    &__heading {
+        padding-left: 7vw;
+        @include mixins.p-bot(9.3);
+
+        h4 {
+            @include mixins.p-bot(2.8);
+        }
+    }
+
+    &__targets {
+        padding: 0 12vw;
+    }
+
+    &__intro {
+        width: 80%;
+    }
+
+    &__number {
+        text-align: center;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p {
+            @include mixins.font-res(80);
+            
+        }
+    }
+
+    &__targetItem {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2.5rem;
+    }
+
+    &__subText {
+        @include mixins.font-res(20);
+        text-align: center;
+        
+    }
+
+    &__targets {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 3.75rem;
+        justify-content: center;
+        align-items: baseline;
+    }
+
+    &__dot1 {
+        width: 11.125rem;
+        height: 11.125rem;
+        @include mixins.m-bot(10.375);
+    }
+
+    &__dot2 {
+        width: 12.375rem;
+        height: 12.375rem;
+        @include mixins.m-bot(9.75);
+    }
+
+    &__dot3 {
+        width: 13.75rem;
+        height: 13.75rem;
+        @include mixins.m-bot(9);
+    }
+
+    &__dot4 {
+        width: 16.875rem;
+        height: 16.875rem;
+        @include mixins.m-bot(7.875);
+    }
+
+    &__dot5 {
+        width: 20.937rem;
+        height: 20.937rem;
+        @include mixins.m-bot(5.812);
+    }
+}
+
+@include mixins.media(sm) {
+    .climate {
+        &__targets {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &__intro {
+            width: 50vw;
+        }
+    }
+}
+
+@include mixins.media(xl) {
+    .climate {
+        &__targets {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        &__targetItem {
+            margin-bottom: 0;
+        }
+
+        &__intro {
+            width: 30vw;
+        }
+    }
+}

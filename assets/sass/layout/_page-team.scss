@@ -1,0 +1,33 @@
+@use '../utilities/mixins';
+
+.meet-the-team {
+    background-color: #EAEAE8;
+    padding-left: 7vw;
+    padding-right: 10.8vw;
+    padding-bottom: 9.635vw;
+
+    h3 {
+        padding-top: 6.4vw;
+        padding-bottom: 1.8rem
+    }
+
+    &__grid {
+        @include mixins.grid(85px, 4);
+    }
+
+    &__subTitle {
+        @include mixins.font-res(35);
+        line-height: 1;
+        margin-top: 1.8rem;
+    }
+
+    &__role {
+        @include mixins.font-res(18);
+        margin-bottom: 3.32rem;
+    }
+
+    &__link {
+        border-bottom: 1px solid #707070;
+        padding-bottom: 0.5rem;
+    }
+}

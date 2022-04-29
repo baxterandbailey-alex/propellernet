@@ -33,6 +33,14 @@
       "oAP" : "\/404.php",
       "oF" : 0
     },
+    "\/acf-json\/group_626bca3c49eb1.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/acf-json\/group_626bca3c49eb1-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/acf-json\/group_6246fff744440.json" : {
       "ft" : 524288,
       "oA" : 1,
@@ -41,10 +49,26 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/acf-json\/group_6262aafb11876.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/acf-json\/group_6262aafb11876-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/acf-json\/group_62542d156e04e.json" : {
       "ft" : 524288,
       "oA" : 1,
       "oAP" : "\/acf-json\/group_62542d156e04e-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/acf-json\/group_62690a00aeb94.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/acf-json\/group_62690a00aeb94-min.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
@@ -71,6 +95,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/archive-projects.php",
+      "oF" : 0
+    },
+    "\/archive-team.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/archive-team.php",
       "oF" : 0
     },
     "\/assets\/css\/app.min-min.css" : {
@@ -278,6 +310,19 @@
       "q" : 100,
       "rq" : 75
     },
+    "\/assets\/image\/facebook.png" : {
+      "ft" : 32768,
+      "iS" : 1913,
+      "oA" : 0,
+      "oAP" : "\/assets\/image\/facebook.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/assets\/image\/green-bracket-left.png" : {
       "ft" : 32768,
       "iS" : 1412,
@@ -317,11 +362,50 @@
       "q" : 100,
       "rq" : 75
     },
+    "\/assets\/image\/linkedin.png" : {
+      "ft" : 32768,
+      "iS" : 1988,
+      "oA" : 0,
+      "oAP" : "\/assets\/image\/linkedin.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/assets\/image\/logo.png" : {
       "ft" : 32768,
       "iS" : 3815,
       "oA" : 0,
       "oAP" : "\/assets\/image\/logo.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/assets\/image\/long-white-arrow.png" : {
+      "ft" : 32768,
+      "iS" : 587,
+      "oA" : 0,
+      "oAP" : "\/assets\/image\/long-white-arrow.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
+    "\/assets\/image\/twitter.png" : {
+      "ft" : 32768,
+      "iS" : 2137,
+      "oA" : 0,
+      "oAP" : "\/assets\/image\/twitter.png",
       "oF" : 0,
       "oIPL" : 0,
       "opt" : 0,
@@ -519,6 +603,36 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/assets\/sass\/components\/flx\/_flx-climate.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 1,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/_flx-climate.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/assets\/sass\/components\/flx\/_flx-contact-us.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 1,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/_flx-contact-us.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/assets\/sass\/components\/flx\/_flx-content-slider.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -589,6 +703,21 @@
       "ma" : 1,
       "oA" : 1,
       "oAP" : "\/assets\/css\/_flx-hero.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/assets\/sass\/components\/flx\/_flx-insight-categories.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 1,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/_flx-insight-categories.min.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,
@@ -714,6 +843,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/assets\/sass\/components\/flx\/_flx-work-link.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 1,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/_flx-work-link.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/assets\/sass\/components\/flx\/_flx.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -819,6 +963,51 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/assets\/sass\/layout\/_page-category.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 1,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/_page-category.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/assets\/sass\/layout\/_page-insight.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 1,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/_page-insight.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/assets\/sass\/layout\/_page-job.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 1,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/_page-job.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/assets\/sass\/layout\/_page-our-work.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -834,6 +1023,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/assets\/sass\/layout\/_page-post.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 1,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/_page-post.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/assets\/sass\/layout\/_page-product.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -844,6 +1048,36 @@
       "ma" : 1,
       "oA" : 1,
       "oAP" : "\/assets\/css\/_page-product.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/assets\/sass\/layout\/_page-team-member.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 1,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/_page-team-member.min.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/assets\/sass\/layout\/_page-team.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 1,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/css\/_page-team.min.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,
@@ -939,6 +1173,14 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/category.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/category.php",
+      "oF" : 0
+    },
     "\/fonts\/Basetica-Light.woff" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1003,6 +1245,14 @@
       "oAP" : "\/header.php",
       "oF" : 0
     },
+    "\/home.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/home.php",
+      "oF" : 0
+    },
     "\/inc\/plugin-acf.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1057,6 +1307,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/index.php",
+      "oF" : 0
+    },
+    "\/job-add.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/job-add.php",
       "oF" : 0
     },
     "\/node_modules" : {
@@ -1121,6 +1379,22 @@
       "oAP" : "\/partials\/flx\/flx-block-text-image.php",
       "oF" : 0
     },
+    "\/partials\/flx\/flx-climate-targets.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/partials\/flx\/flx-climate-targets.php",
+      "oF" : 0
+    },
+    "\/partials\/flx\/flx-contact-us.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/partials\/flx\/flx-contact-us.php",
+      "oF" : 0
+    },
     "\/partials\/flx\/flx-content-slider.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1175,6 +1449,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/partials\/flx\/flx-img-banner.php",
+      "oF" : 0
+    },
+    "\/partials\/flx\/flx-insight-categories.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/partials\/flx\/flx-insight-categories.php",
       "oF" : 0
     },
     "\/partials\/flx\/flx-intro.php" : {
@@ -1281,6 +1563,14 @@
       "oAP" : "\/partials\/flx\/flx-three-words-images.php",
       "oF" : 0
     },
+    "\/partials\/flx\/flx-work-link.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/partials\/flx\/flx-work-link.php",
+      "oF" : 0
+    },
     "\/partials\/flx\/flx.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1383,6 +1673,22 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/single-projects.php",
+      "oF" : 0
+    },
+    "\/single-team.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/single-team.php",
+      "oF" : 0
+    },
+    "\/single.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/single.php",
       "oF" : 0
     },
     "\/style-min.css" : {

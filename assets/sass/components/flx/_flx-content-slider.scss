@@ -1,17 +1,27 @@
+@use '../../utilities/mixins';
+@use '../../utilities/variables';
+
 .contentSlider {
 
     h3 {
        padding-left: 7vw; 
-       padding-top: 6vw;
+       @include mixins.p-top(7.1);
+       @include mixins.p-bot(3);
+    }
+
+    &__intro {
+        width: 80%;
+        padding-left: 7vw;
     }
 
     &__slider {
-        padding-top: 8vw;
-        padding-bottom: 12vw;
+
+        @include mixins.p-top(7.1);
+        @include mixins.p-bot(8.9);
         
 
         h4 {
-            margin-bottom: 2.3rem;
+            @include mixins.m-bot(2.3);
         }
     }
 
@@ -19,6 +29,12 @@
     &__item {
         display: flex;
         flex-direction: column;
+        margin: 0 0.5rem;
+
+        p {
+            width: 80%;
+            @include mixins.m-bot(2.3);
+        }
     }
 
     .splide-two {
@@ -30,8 +46,8 @@
     }
 
     .splide__slide figure, .splide__slide img {
-        height: 28vw;
-        width: 28vw;
+        width: 100%;
+        height: auto;
         margin-bottom: 2.3rem;
     }
 
@@ -47,6 +63,14 @@
 
         &--prev {
             display: none;
+        }
+    }
+}
+
+@include mixins.media(md) {
+    .contentSlider {
+        &__intro {
+            width: 42.125rem;
         }
     }
 }

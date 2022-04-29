@@ -6,15 +6,75 @@
     background-color: #EAEAE8;
 
     h2 {
-        padding: 5vw 7vw;
+        padding-left: 7vw;
+        @include mixins.p-top(6.18);
+        @include mixins.p-bot(3.5);
     }
 
     &__grid {
         margin: 0 7vw;
+
     }
 
     &__card {
         padding-bottom: 2.5rem;
+
+        h4 {
+            @include mixins.m-top(2.5);
+        }
+    }
+
+    &__cardLink {
+        display: flex;
+        align-items: center;
+        @include mixins.m-top(2.75);
+    
+        a {
+            border-bottom: 1px solid black;
+            padding-bottom: 0.5rem;
+            margin-right: 1rem;
+        }
+
+        img {
+            width: 1rem;
+        }
+    }
+
+    &__featured {
+        width: 100%;
+        position: relative;
+        @include mixins.m-bot(9);
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            object-fit: cover;
+        }
+    }
+
+    &__featured-text {
+        width: 80%;
+        position: relative;
+        z-index: 2;
+        margin: 0 7vw;
+        @include mixins.p-bot(26.5);
+        h4 {
+            @include mixins.p-top(6.68);
+            @include mixins.p-bot(2.8);
+        }
+
+        p {
+            @include mixins.p-bot(4.25);
+            color: #{variables.$white};
+            font-family: 'freight';
+            @include mixins.font-res(70);
+            line-height: 1.2;
+        }
     }
 }
 
@@ -27,6 +87,19 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8vw;
+        }
+    }
+}
+
+@include mixins.media(md) {
+    .our-work {
+        &__featured-text {
+            width: 57.25rem;
+            padding-left: 7vw;
+    
+            p {
+                @include mixins.font-res(90);
+            }
         }
     }
 }

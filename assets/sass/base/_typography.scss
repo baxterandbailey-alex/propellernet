@@ -287,23 +287,70 @@ body {
 }
 
 .white-text {
-    color: white;
+    color: #{variables.$white};
 }
 
 // Buttons
 
-.btn {
+.btn, .btn-rev {
     display: inline-flex;
-    justify-content: space-between;
     align-items: center;
-    border: 1px solid #102E2B;
+    align-self: flex-start;
+    border: 1px solid #{variables.$off_black};
     border-radius: 25px;
-    padding: 12px 19px 15px 19px;
-    @include mixins.font-res(16);
-    width: 14rem;
+    padding: 12px 60px 15px 19px;
+    line-height: 1;
+    position: relative;
+    transition: all 0.25s;
 
     &:after {
         content: url('#{variables.$theme__path}/assets/image/btn-arrow.png');
         padding-top: 2px;
-    }   
+        position: absolute;
+        right: 1rem;
+    }
+}
+
+.btn {
+    &:hover {
+        background-color: #{variables.$light_green};
+        border: 1px solid #{variables.$light_green};
+    }
+}
+
+.btn-rev {
+    &:hover {
+        background-color: #{variables.$off_black};
+        border: 1px solid #{variables.$off_black};
+        color: #{variables.$white};
+
+        &:after {
+            content: url('#{variables.$theme__path}/assets/image/white-btn-arrow.png');
+        }
+    }
+}
+
+.btn-white {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    border: 1px solid #{variables.$white};
+    border-radius: 25px;
+    padding: 12px 60px 15px 19px;
+    line-height: 1;
+    position: relative;
+    transition: all 0.25s;
+    color: #{variables.$white};
+
+    &:after {
+        content: url('#{variables.$theme__path}/assets/image/white-btn-arrow.png');
+        padding-top: 2px;
+        position: absolute;
+        right: 1rem;
+    }
+    
+    &:hover {
+        background-color: #{variables.$off_black};
+        border: 1px solid #{variables.$off_black};
+    }
 }

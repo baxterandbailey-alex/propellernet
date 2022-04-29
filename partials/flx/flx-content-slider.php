@@ -1,5 +1,6 @@
 <?php
     $sectionTitle = get_sub_field('section_title');
+    $introText = get_sub_field('intro_text');
     $bgColour = get_sub_field('background_colour');
 ?>
 
@@ -7,6 +8,9 @@
 
     <?php if ($sectionTitle) : ?>
         <h3 class="font-freight font-large"><?php echo $sectionTitle; ?></h3>
+    <?php endif; ?>
+    <?php if ($introText) : ?>
+        <p class="contentSlider__intro font-baseticaLight font-reg"><?php echo $introText; ?></p>
     <?php endif; ?>
     <div class="contentSlider__slider">
         <div class="splide-two">
@@ -44,6 +48,14 @@
     <script>new Splide( '.splide-two', {
             type   : 'loop',
             perPage: 3,
+            breakpoints: {
+                768: {
+                    perPage: 1,
+                },
+                1024: {
+                    perPage: 2,
+                },
+            },
             perMove: 1,
             padding: '1rem'
     } ).mount();</script>

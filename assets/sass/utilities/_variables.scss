@@ -11,14 +11,26 @@ $colors: (
     "light-green": #CDFF75,
     "dark-gray": #707070,
     "light-gray": #EAEAE8,
-    "white": #FFFFFF
+    "white": #FFFFFF,
+    "black": #000000,
+    "light-cover": #eaeae830
 );
 
 @each $key, $val in $colors {
     .bg-#{$key} {
         background-color: $val;
     }
+
+
+    .block-#{$key} {
+        &:before {
+            background-color: $val;
+        }
+    }
+
 }
 
 $light_green: #CDFF75;
-
+$off_black: #102E2B;
+$white: #ffffff;
+$dark_gray: #707070;

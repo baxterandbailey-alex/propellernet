@@ -6,23 +6,49 @@
 
     &__bg,
     .full-img-link__bg > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        height: 100%;
         width: 100%;
-        height: 100vw;
         object-fit: cover;
     }
 
     &__content {
-        position: absolute;
-        left: 14vw;
-        top: 4vw;
+        padding-left: 7vw;
+        @include mixins.p-top(6.25);
+        @include mixins.p-bot(15.8);
+
+        h3 {
+            @include mixins.p-bot(4);
+        }
+
+        div {
+            @include mixins.p-bot(5.25);
+            width: 80%;
+        }
     }
+
+    &__arrow {
+        margin-top: -2rem;
+        @include mixins.p-bot(17.4);
+    }
+
 }
 
-@include mixins.media(sm) {
+@include mixins.media(md) {
     .full-img-link {
-        &__bg,
-        .full-img-link__bg > img {
-            height: auto;
+        &__content {    
+            div {
+                width: 33.5rem;
+            }
+        }
+
+        &__arrow {
+            margin-top: -4rem;
         }
     }
 }

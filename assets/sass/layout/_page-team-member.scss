@@ -1,0 +1,101 @@
+@use '../utilities/mixins';
+
+.team-member {
+    background-color: #0C2E2B;
+    padding: 25.5vw 7vw 5.5vw 7vw;
+
+    &__top-container {
+        position: relative;
+
+        figure,
+        figure > img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        
+        img {
+            width: 1.25rem;
+        }
+
+        p {
+            color: #CDFF75;
+            @include mixins.font-res(150);
+            margin: 3rem;
+        }
+    }
+
+    &__intro {
+        width: 100%;
+        margin-left: auto;
+        line-height: 1.2;
+    }
+
+    &__text-box {
+        margin-top: 5rem;
+        width: 100%;
+        margin-left: auto;
+        padding-left: 3.593vw;
+        border-left: 1px solid #FFFFFF;
+    }
+
+    &__text-block {
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__social-links {
+        display: flex;
+
+        a {
+            margin-right: 0.8rem;
+            margin-top: 2.5rem;
+        }
+    }
+}
+
+@include mixins.media(sm) {
+
+    .team-member {
+        padding-top: 16.125rem;
+
+        &__top-container {
+            position: relative;
+    
+            figure,
+            figure > img {
+                width: 31.510vw;
+                max-width: 37.8rem;
+                height: auto;
+            }
+        }
+
+        &__name {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            p {
+                @include mixins.font-res(200);
+            }
+        }
+
+        &__intro {
+            width: 30vw;
+
+        }
+    
+        &__text-box {
+            width: 33.593vw;
+        }
+    }
+}

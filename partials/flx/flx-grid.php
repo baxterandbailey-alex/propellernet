@@ -3,7 +3,7 @@ $gridTitle = get_sub_field('title');
 $gridSubText = get_sub_field('sub_text');
 $gridColumns = get_sub_field('grid_columns');
 $gridBgColour = get_sub_field('background_colour');
-
+$alignment = get_sub_field('grid_alignment');
 ?>
 
 <section class="grid bg-<?php if ($gridBgColour) : echo $gridBgColour; endif;?>">
@@ -26,7 +26,7 @@ $gridBgColour = get_sub_field('background_colour');
                 $itemLink = get_sub_field('grid_item_link');
                 $itemLinkText = get_sub_field('grid_item_link_text');
                 ?>
-                <div class="grid-item">
+                <div class="grid-item <?php if ($alignment === 'centre') : echo 'grid-item__centre'; endif ?>">
                     <!-- Grid Image -->
                     <?php if($itemImage) : ?>
                         <figure class="grid-item__img">

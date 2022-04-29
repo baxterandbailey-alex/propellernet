@@ -1,0 +1,113 @@
+@use '../utilities/mixins';
+
+.job {
+    &__header {
+        background-color: #51827F;
+        padding: 24vw 0 3.33vw 7vw;
+
+        h2 {
+            color: #CDFF75;
+            @include mixins.font-res(45);
+        }
+
+        p {
+            @include mixins.font-res(45);
+        }
+    }
+
+    &__content {
+        padding: 0 7vw;
+    }
+
+    &__intro {
+        margin-top: 3.375rem;
+    }
+
+    &__socials {
+        display: flex;
+        margin-top: 5rem;
+        margin-bottom: 10rem;
+
+        a {
+            margin-right: 1rem;
+        }
+    }
+
+    &__section {
+        padding-top: 2.8rem;
+        margin-top: 2.8rem;
+        border-top: 1px solid #707070;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'freight';
+            @include mixins.font-res(40);
+            margin-bottom: 2.75rem;
+        }
+
+        p {
+            margin-bottom: 1.75rem;
+            @include mixins.font-res(22);
+        }
+
+        strong {
+            font-family: 'baseticaMedium';
+            @include mixins.font-res(22);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 0; 
+            padding-left: 20px;
+            @include mixins.font-res(22);
+
+            li {
+                margin-bottom: 1.75rem;
+            }
+        }
+    }
+}
+
+
+@include mixins.media(sm) {
+    .job {
+
+        &__header {    
+            h2 {
+                @include mixins.font-res(70);
+            }
+    
+            p {
+                @include mixins.font-res(70);
+            }
+        }
+
+        &__intro {
+            margin-top: 6.75rem;
+        }
+
+        &__content {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        &__section {
+            padding-top: 5.6rem;
+            margin-top: 5.6rem;
+        }
+    }
+    
+}
+
+@include mixins.media(xl) {
+    .job {
+        &__content {
+            width: 50vw;
+            max-width: 60rem;
+        }
+    }
+    
+}

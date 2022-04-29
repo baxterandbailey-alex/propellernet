@@ -1,0 +1,64 @@
+@use '../../utilities/mixins';
+
+.work-link {
+    background-color: #707070;
+    padding: 10vw 0 7.7vw 7vw;
+    color: white;
+    display: flex;
+    flex-direction: column-reverse;
+
+    figure {
+        margin-bottom: 2.5rem;
+    }
+
+    &__textBox {
+        h4 {
+            padding-bottom: 3.8rem;
+        }
+
+        P {
+            padding-bottom: 5rem;
+            width: 80%;
+        }
+    }
+}
+
+@include mixins.media(sm) {
+    .work-link {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-right: 23vw;
+
+
+        &__textBox {
+            width: 60%;
+
+            P {
+                width: 100%;
+            }
+        }
+
+        figure {
+            width: 11vw;
+            max-width: 14rem;
+        }
+
+
+    }
+}
+
+@include mixins.media(lg) {
+    .work-link {
+        
+        
+
+
+        &__textBox {
+            width: 35vw;
+            max-width: 42rem;
+        }
+
+
+
+    }
+}

@@ -17,26 +17,28 @@ $buttonText = get_sub_field('button_text');
         </figure>
     <?php endif; ?>
 
-    <div class="full-img-link__content">
-        <?php if ( $title ) : ?>
-            <h3 class="font-freight font-xl white-text"><?php echo $title; ?></h3>
-        <?php endif; ?>
+    <a href="<?php echo $link; ?>">
+        <div class="full-img-link__content">
+            <?php if ( $title ) : ?>
+                <h3 class="font-freight font-xl white-text"><?php echo $title; ?></h3>
+            <?php endif; ?>
 
-        <?php if ( $arrow ) : ?>
-            <p>arrow</p>
-        <?php endif; ?>
+            <?php if ( $arrow ) : ?>
+                <img class="full-img-link__arrow" src="<?php echo get_template_directory_uri().'/assets/image/long-white-arrow.png'; ?>">
+            <?php endif; ?>
 
-        <?php if ( $text ) : ?>
-            <p><?php echo $text; ?></p>
-        <?php endif; ?>
+            <?php if ( $text ) : ?>
+                <div class="white-text font-baseticaLight font-reg"><?php echo $text; ?></div>
+            <?php endif; ?>
 
-        <?php if ( $link ) : ?>
-            <a href="<?php echo $link; ?>">LINK</a>
-        <?php endif; ?>
-
-        <?php if ( $buttonText ) : ?>
-            <p><?php echo $buttonText; ?></p>
-        <?php endif; ?>
-    </div>
+            <?php if ( $buttonText ) : ?>
+                <a href="<?php echo $link; ?>" class="btn-white">
+                    <?php if ( $buttonText ) : ?>
+                        <?php echo $buttonText; ?>
+                    <?php endif; ?>
+                </a>
+            <?php endif; ?>
+        </div>
+    </a>
 
 </section>

@@ -1,0 +1,71 @@
+@use '../../utilities/mixins';
+
+.posts-category {
+    background-color: #51827F;
+    padding-top: 8.2vw;
+    padding-bottom: 10.3vw;
+
+    .posts__grid {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .category__cardImage {
+        position: relative;
+        display: block;
+        height: 0;
+        padding-top: 100%;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .category__card {
+        padding: 0 7vw;
+        h4 {
+            margin-top: 2.3rem;
+        }
+
+        p {
+            margin-bottom: 1.06rem;
+        }
+
+        &--link {
+            display: flex;
+            align-items: center;
+    
+            a {
+                border-bottom: 1px solid white;
+                padding-bottom: 0.5rem;
+                margin-right: 1rem;
+            }
+
+            img {
+                width: 1rem;
+            }
+        }
+        
+    }
+    
+}
+
+.insight__title {
+    padding: 4.6vw 0 5.5vw 7vw ;
+    p {
+        color: #707070;
+    }
+}
+
+@include mixins.media(sm) {
+    .posts-category {
+        .category__card {
+            padding: 0;
+        }
+    }
+}

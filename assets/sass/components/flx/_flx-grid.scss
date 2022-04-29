@@ -1,15 +1,18 @@
 @use '../../utilities/mixins';
 
 .grid {
+    @include mixins.p-top(6.187);
+    @include mixins.p-bot(12.75);
+
     &__title {
-        margin-left: 7.291vw;
+        margin-left: 7vw;
         @include mixins.m-bot(5.75);
     }
 
     &__text {
-        margin-left: 14.885vw;
+        margin: 0 auto;
         @include mixins.m-bot(10.062);
-        width: 49vw;
+        width: 86%;
     }
 
     &__conatiner {
@@ -19,20 +22,24 @@
     }
 
     &-item {
+        @include mixins.m-bot(10);
         &__img {
             margin: 2.75rem 0;
-            img {
-                margin: 0 auto;
-            }
         }
 
         &__title {
-            margin-bottom: 3rem;
-            text-align: center;
+            @include mixins.m-bot(3);
         }
 
         &__text {
-            margin-bottom: 2rem;
+            @include mixins.m-bot(2);
+        }
+
+        &__centre {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
     }
 }
@@ -41,6 +48,7 @@
     .grid {
 
         &-item {
+            @include mixins.m-bot(0);
             &__img {
                 img {
                     margin: unset;
@@ -52,8 +60,7 @@
             }
         }
 
-        @include mixins.p-top(6.187);
-        @include mixins.p-bot(12.75);
+
 
         &__2 {
             @include mixins.grid(50, 2);
@@ -66,10 +73,6 @@
         &__4 {
             @include mixins.grid(50, 2);
             align-items: center;
-
-            .grid-item {
-                width: 10.364vw;
-            }
         }
     }
 }
@@ -78,6 +81,11 @@
     .grid {
         &__conatiner {
             width: 65.729vw;
+        }
+
+        &__text {
+            margin-left: 14.885vw;
+            width: 49vw;
         }
 
         @include mixins.p-top(6.187);
