@@ -78,6 +78,25 @@
                 "id": ""
             },
             "return_format": "url"
+        },
+        {
+            "key": "field_627110aa944a8",
+            "label": "Header Overlay",
+            "name": "header_overlay",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "On",
+            "ui_off_text": "Off"
         }
     ],
     "location": [
@@ -101,13 +120,6 @@
                 "operator": "==",
                 "value": "default"
             }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "archive-projects.php"
-            }
         ]
     ],
     "menu_order": 0,
@@ -119,5 +131,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1650452501
+    "modified": 1651664434
 }

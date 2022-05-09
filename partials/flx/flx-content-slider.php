@@ -1,10 +1,9 @@
 <?php
     $sectionTitle = get_sub_field('section_title');
     $introText = get_sub_field('intro_text');
-    $bgColour = get_sub_field('background_colour');
 ?>
 
-<section class="contentSlider bg-<?php if ($bgColour) : echo $bgColour; endif; ?>">
+<section class="contentSlider bg-light-gray">
 
     <?php if ($sectionTitle) : ?>
         <h3 class="font-freight font-large"><?php echo $sectionTitle; ?></h3>
@@ -23,10 +22,16 @@
                         $text = get_sub_field('item_text');
                         $link = get_sub_field('item_link');
                         $linkText = get_sub_field('link_text');
+                        $overlay = get_sub_field('image_overlay');
                     ?>
                         <div class="contentSlider__item splide__slide">
                             <?php if ($image ): ?>
-                                <img src="<?php echo $image; ?>" alt="">
+                                <figure>
+                                    <img src="<?php echo $image; ?>" alt="">
+                                    <?php if ($overlay) : ?>
+                                        <div class="img-overlay"></div>
+                                    <?php endif; ?>
+                                </figure>
                             <?php endif; ?>
                             <?php if ($title) : ?>
                                 <h4 class="font-freight font-large"><?php echo $title; ?></h4>

@@ -20,6 +20,15 @@
 
     &__header {
         margin-bottom: 2.5rem;
+        h1, h2, h3, h4, h5 {
+            font-family: 'freight';
+            font-size: clamp(30px, 8vw, 90px);
+            line-height: 1.1;
+        
+            em {
+                font-family: 'freightItalic';
+            }
+        }
     }
 
     &__text {
@@ -48,7 +57,7 @@
         }
     
         &__text {
-            width: 27.916vw;
+            width: 70%;
             margin-left: auto;
             margin-right: 2.5rem;
     
@@ -91,6 +100,8 @@
         grid-template-columns: 2fr 4fr;
         gap: 50px;
         }
+
+
     }
 
     .reverse {
@@ -105,6 +116,10 @@
     .feature-block {
         &__header {
             width: 42.29vw;
+        }
+
+        &__text {
+            width: 27.916vw;
         }
     }
 }

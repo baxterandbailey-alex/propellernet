@@ -2,53 +2,39 @@
 @use '../utilities/variables';
 @use '../utilities/mixins';
 
-#site-header {
+.site-header {
     position: relative;
+    .header__background {
+        position: absolute;
+    }
+}
+
+.image-site-header {
+    .header__background {
+            position: relative;
+            width: 100%;
+            height: auto;
+    }
 }
 
 .header {
-
     &__background {
-        
-            width: 100%;
-            height: 200vw;
-            max-height: 100vh;
-            object-fit: cover;
-        
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 
     &__content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        width: 100%;
-        margin: 0 auto;
+        position: relative;
+        z-index: 1;
 
-        a {
-            padding-bottom: 5px;
-            padding-right: 2.5rem;
-            border-bottom: 1px solid white;
-
-        }
-    }
-
-    &__subText {
-        width: 80%;
-        margin: 2.5rem auto;
-    }
-
-    &__quote {
-        display: flex;
-        width: 90%;
-        margin: 0 auto;
-        align-items: center;
-        
-        h2 {
-            flex: 1;
-            line-height: 1;
-            @include mixins.font-res(80);
+        p {
+            margin-left: 2rem;
+            margin-right: 2rem;
+            text-align: center;
+            @include mixins.m-bot(3.25);
         }
     }
 
@@ -56,30 +42,65 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @include mixins.m-bot(3.25);
+
+        a {
+            padding-bottom: 5px;
+            padding-right: 2.5rem;
+            border-bottom: 1px solid white;
+        }
         
         img {
             padding-left: 0.8rem;
         }
     }
-}
 
+    &__quote {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include mixins.m-top(15.25);
+        margin-bottom: 4rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+
+        img {
+            width: 1.093rem;
+        }
+
+        h2 {
+            font-size: clamp(50px, 8vw, 120px);
+            text-align: center;
+            margin: 0 5vw;
+        }
+    }
+}
 
 @include mixins.media(sm) {
     .header {
-        &__background {
-            height: 58rem;
+        &__quote {
+            width: 86.729vw;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 12.708vw;
         }
 
-        &__quote {
-            width: 80%;
-            
-            h2 {
-                @include mixins.font-res(90);
+
+        &__content {
+            p {
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
+    }
 
-        &__subText {
-            width: 50%;
+    .image-site-header {
+        .header__background {
+                position: relative;
+                width: 100%;
+                height: 44.75rem;
+                max-height: 100vh;
         }
     }
 }
@@ -87,33 +108,43 @@
 @include mixins.media(md) {
     .header {
         &__quote {
-            width: 60%;
+            width: 65.729vw;
+
         }
-        
     }
 }
 
 @include mixins.media(lg) {
     .header {
-        &__quote {
-            width: 63.854vw;
-            max-width: 76rem;
-
-            h2 {
-                width: 30%;
-                margin: 0 7rem;
+        &__content {
+            p {
+                width: 38.75rem;
             }
         }
-        
     }
 }
 
 @include mixins.media(xl) {
     .header {
         &__quote {
+            margin-top: 14.25rem;
             h2 {
-                margin: 0 12.5rem;
+                margin: 0 10vw;
+            }
+
+            img {
+                width: 1.56rem;
             }
         }
     }
+}
+
+
+.img-overlay {
+    background-color: rgba(12, 46, 43, 0.28);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
 }

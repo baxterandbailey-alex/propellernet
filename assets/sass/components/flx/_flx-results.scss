@@ -15,8 +15,13 @@
         margin-bottom: 2.5rem;
 
         img {
-            height: 80%;
+            width: 33px;
         }
+    }
+
+    &__intro-text {
+        @include mixins.p-bot(8);
+        width: 80%;
     }
 
     &__text-box {
@@ -44,6 +49,16 @@
             grid-template-columns: 1fr 1fr 1fr;
             gap: 7.187vw;
         }
+
+        &__item {
+            img {
+                width: 21px;
+            }
+        }
+
+        &__intro-text {
+            width: 33.5rem;
+        }
     }
 }
 
@@ -52,6 +67,12 @@
 
         &__numbers {
             @include mixins.font-res(120);
+        }
+
+        &__item {
+            img {
+                width: 30px;
+            }
         }
     }
 }

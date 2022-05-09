@@ -6,6 +6,7 @@ $caseStudyLink = get_sub_field('case_study_link');
 $caseStudyImage = get_sub_field('case_study_image');
 $caseStudyService = get_sub_field('case_study_service');
 $backgroundColour = get_sub_field('background_colour');
+$overlay = get_sub_field('image_overlay');
 ?>
 
 <section class="process bg-<?php if($backgroundColour) : echo $backgroundColour; endif;?>">
@@ -20,6 +21,9 @@ $backgroundColour = get_sub_field('background_colour');
     <?php if ($caseStudyName) : ?>
         <div class="process__casestudy">
             <img class="process__img" src="<?php echo $caseStudyImage; ?>" alt="">
+            <?php if ($overlay) : ?>
+                <div class="img-overlay"></div>
+            <?php endif; ?>
             <div class="process__service">
                 <p class="white-text font-baseticaMedium font-small"><?php echo $caseStudyService; ?></p>
                 <p class="white-text font-baseticaLight font-small">CASE STUDY</p>

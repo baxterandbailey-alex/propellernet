@@ -1,3 +1,5 @@
+@use '../utilities/mixins';
+
 .product {
     &__header {
         position: relative;
@@ -15,9 +17,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 1;
+        width: 100%;
 
         img {
-            width: 2.125rem;
+            width: 6px;
+        }
+
+        h2 {
+            margin: 0 1rem;
         }
     }
 
@@ -29,6 +37,25 @@
 
         img {
             margin-right: 1rem;
+        }
+    }
+}
+
+@include mixins.media(sm) {
+    .product {
+        &__headerContent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+    
+            img {
+                width: 17px;
+            }
         }
     }
 }

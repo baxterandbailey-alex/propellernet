@@ -44,6 +44,9 @@ function bbwp_scripts()
 	//// JS
 	// See ya later, jQuery!
 	wp_deregister_script('jquery');
+	// Add Mmenu
+
+	wp_enqueue_script('mmenu-js', get_template_directory_uri() . '/assets/js/mmenu.js', array(), null, true);
 	// Theme
 	wp_enqueue_script('app-js', get_template_directory_uri() . '/assets/js/app.min.js', array(), '0.0.1', true);
 }
@@ -77,3 +80,4 @@ function add_additional_class_on_li($classes, $item, $args) {
     return $classes;
 }
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+

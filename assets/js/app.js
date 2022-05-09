@@ -4,49 +4,49 @@
 //// Site functions ////
 
 // Hide me show me header
-// function headerHideShow() {
-// 	let didScroll;
-// 	let lastScrollTop = 0;
+function headerHideShow() {
+	let didScroll;
+	let lastScrollTop = 0;
 
-// 	const delta = 5;
-// 	const navbar = document.querySelector( '#site-header' );
-// 	const navbarHeight = navbar.offsetHeight;
+	const delta = 5;
+	const navbar = document.querySelector( '#site-header' );
+	const navbarHeight = navbar.offsetHeight;
 
-// 	window.addEventListener( 'scroll', () => {
-// 		didScroll = true;
-// 	});
+	window.addEventListener( 'scroll', () => {
+		didScroll = true;
+	});
 
-// 	setInterval( function() {
-// 		if ( didScroll ) {
-// 			hasScrolled();
-// 			didScroll = false;
-// 		}
-// 	}, 250 );
+	setInterval( function() {
+		if ( didScroll ) {
+			hasScrolled();
+			didScroll = false;
+		}
+	}, 250 );
 
-// 	function hasScrolled() {
-// 		let st = window.pageYOffset;
+	function hasScrolled() {
+		let st = window.pageYOffset;
 
-// 		if ( Math.abs( lastScrollTop - st ) <= delta ) {
-// 			return;
-// 		}
+		if ( Math.abs( lastScrollTop - st ) <= delta ) {
+			return;
+		}
 
-// 		if ( st > lastScrollTop && st > navbarHeight * 2 ) {
+		if ( st > lastScrollTop && st > navbarHeight * 2 ) {
 
-// 			// Scroll Down
-// 			navbar.classList.remove( 'nav-down' );
-// 			navbar.classList.add( 'nav-up' );
-// 		} else {
+			// Scroll Down
+			navbar.classList.remove( 'nav-down' );
+			navbar.classList.add( 'nav-up' );
+		} else {
 
-// 			// Scroll Up
-// 			if ( st + window.innerHeight < document.body.clientHeight ) {
-// 				navbar.classList.remove( 'nav-up' );
-// 				navbar.classList.add( 'nav-down' );
-// 			}
-// 		}
+			// Scroll Up
+			if ( st + window.innerHeight < document.body.clientHeight ) {
+				navbar.classList.remove( 'nav-up' );
+				navbar.classList.add( 'nav-down' );
+			}
+		}
 
-// 		lastScrollTop = st;
-// 	}
-// }
+		lastScrollTop = st;
+	}
+}
 
 // Smooth scroll
 function smoothScroll() {
@@ -69,7 +69,7 @@ function smoothScroll() {
 }
 
 // Navigation
-/* function navMobile() {
+function navMobile() {
 	const navOpen = document.querySelector( '#nav-open' );
 	const navClose = document.querySelector( '#nav-close' );
 	const navContainer = document.querySelector( '#nav-mobile' );
@@ -93,7 +93,7 @@ function smoothScroll() {
 		});
 		document.documentElement.classList.remove( 'noscroll' );
 	});
-} */
+} 
 
 
 //// Flexible content functions ////
@@ -118,29 +118,63 @@ const DOMReady = function( callback ) {
 
 // Burger Menu
 
-const menuBtn = document.querySelector('.menu-btn');
-const menu = document.querySelector('.navbar-menu');
+function siteMenu() {
 
-menuBtn.addEventListener("click", function() {
-	menuBtn.classList.toggle("opened");
+	const menuBtn = document.querySelector('.menu-btn');
+	const menu = document.querySelector('.navbar-menu');
+	const html = document.body.parentNode;
+	const nav = document.getElementById('site-navigation');
 
-	if(menuBtn.classList.contains('opened') ) {
-		menuBtn.setAttribute('aria-expanded', 'true');
-		menu.style.display = "flex";
-	} else {
-		menuBtn.setAttribute('aria-expanded', 'false');
-		menu.style.display = "none";
-	}
-})
+	menuBtn.addEventListener("click", function() {
+		menuBtn.classList.toggle("opened");
+		nav.classList.toggle("menu-open");
 
+		if(menuBtn.classList.contains('opened') ) {
+			menuBtn.setAttribute('aria-expanded', 'true');
+			menu.style.display = "flex";
+			html.style.overflow = "hidden";
+		} else {
+			menuBtn.setAttribute('aria-expanded', 'false');
+			menu.style.display = "none";
+			html.style.overflow = "unset";
+		}
+	})
 
-// onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))" aria-label="Main Menu"
+	// Prevent parent link from working
+	const menuItem = document.querySelectorAll('.menu-item');
+
+	menuItem.forEach((item) => { 
+		const subMenu = item.children[1];
+		item.children[0].addEventListener('click', (e) => {
+			if (subMenu) {
+				e.preventDefault();		
+			}
+		})
+	});
+}
+
+// MMENU
+
+function navMmenu() {
+    new Mmenu('#menu-inner', {
+        wrappers: ['wordpress'],
+        offCanvas: false,
+        navbar: {
+            sticky: false,
+            title: 'Propellernet'
+        },
+        extensions: ['border-none', 'fullscreen', 'fx-panels-slide-100']
+    });
+}
+
 
 //// Let's go! ////
 DOMReady( function() {
 
 	// headerHideShow();
-    smoothScroll();
+    // smoothScroll();
+	// navMmenu();
+	siteMenu();
 
 });
 

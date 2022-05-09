@@ -9,7 +9,22 @@
         }
 
         .font-intro {
-            @include mixins.font-res(60);
+            
+
+            p {
+                line-height: 1.2;
+                @include mixins.font-res(60);
+                font-family: 'freight';
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                @include mixins.font-res(60);
+                font-family: 'freight';
+            }
+
+            em {
+                font-style: italic;
+            }
         }
 
         &__what-we-do-title {
@@ -37,16 +52,18 @@
     .intro {
         display: flex;
         justify-content: space-between;
-        padding: 10.416vw 14.479vw 15.520vw 7.291vw;
+        padding-left: 7vw;
+        padding-right: 7vw;
 
         &-title {
-            width: 35.104vw;
+            flex: 0.5;
             margin-bottom: unset;
         }
 
         &-text {
+            flex: 0.4;
             p {
-                width: 31.509vw;
+                width: 100%;
                 padding-left: 3.593vw;
                 border-left: 1px solid #{variables.$dark_gray};
             }
@@ -56,11 +73,8 @@
             }
         }
 
-
-
         &__what-we-do {
-            width: 31.509vw;
-            padding-left: 3.593vw;
+            flex: 0.4;
         }
 
         .offset {
@@ -70,6 +84,22 @@
 }
 
 @include mixins.media(lg) {
+    .intro {
+        padding: 10.416vw 14.479vw 15.520vw 7.291vw;
+
+        &-title {
+            margin-bottom: unset;
+        }
+    
+        &-text {
+            p {
+                padding-left: 3.593vw;
+            }
+        }
+    }
+}
+
+@include mixins.media(xl) {
     .intro {
         .font-intro {
             @include mixins.font-res(70);

@@ -4,15 +4,16 @@ $gridSubText = get_sub_field('sub_text');
 $gridColumns = get_sub_field('grid_columns');
 $gridBgColour = get_sub_field('background_colour');
 $alignment = get_sub_field('grid_alignment');
+$textColour = get_sub_field('text_colour');
 ?>
 
 <section class="grid bg-<?php if ($gridBgColour) : echo $gridBgColour; endif;?>">
     <?php if($gridTitle) : ?>
-        <p class="grid__title font-freight font-large"><?php echo $gridTitle; ?></p>
+        <p class="grid__title font-freight font-large <?php if ($textColour === 'white') : ?> white-text<?php endif;?>"><?php echo $gridTitle; ?></p>
     <?php endif; ?>
 
     <?php if($gridSubText) : ?>
-        <div class="grid__text font-freight font-xl"><?php echo $gridSubText; ?></div>
+        <div class="grid__text font-freight font-xl <?php if ($textColour === 'white') : ?> white-text<?php endif;?>"><?php echo $gridSubText; ?></div>
     <?php endif; ?>
     
 
@@ -35,15 +36,15 @@ $alignment = get_sub_field('grid_alignment');
                     <?php endif; ?>
                     <!-- Grid Title -->
                     <?php if($itemTitle) : ?>
-                        <p class="grid-item__title"><?php echo $itemTitle; ?></p>
+                        <p class="grid-item__title <?php if ($textColour === 'white') : ?> white-text<?php endif;?>"><?php echo $itemTitle; ?></p>
                     <?php endif; ?>
                     <!-- Grid Text -->
                     <?php if($itemText) : ?>
-                        <p class="grid-item__text"><?php echo $itemText; ?></p>
+                        <p class="grid-item__text <?php if ($textColour === 'white') : ?> white-text<?php endif;?>"><?php echo $itemText; ?></p>
                     <?php endif; ?>
                     <!-- Grid Link -->
                     <?php if($itemLink) : ?>
-                        <a href="<?php echo $itemLink ?>" class="grid-item__link btn">
+                        <a href="<?php echo $itemLink ?>" class="grid-item__link btn <?php if ($textColour === 'white') : ?> btn-white<?php endif;?>">
                             <?php if($itemLinkText) : echo $itemLinkText; endif ;?>
                         </a>
                     <?php endif; ?>

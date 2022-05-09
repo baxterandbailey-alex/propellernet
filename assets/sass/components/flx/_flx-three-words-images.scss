@@ -1,6 +1,13 @@
 @use '../../utilities/mixins';
 
 .three-words-images {
+    @include mixins.m-bot(6.3);
+
+    h4 {
+        margin-left: 7vw;
+        @include mixins.m-bot(8);
+        @include mixins.m-top(6.3);
+    }
     &__container {
         width: 85.416vw;
         margin: 0 auto;
@@ -15,7 +22,7 @@
     &__text {
         padding-top: 15.625vw;
         padding-bottom: 22.291vw;
-        width: 58.75vw;
+        width: 100%;
         margin: 0 auto;
 
         &-one {
@@ -23,7 +30,7 @@
         }
 
         &-two {
-            margin: 6.822vw 0;
+            margin:0;
         }
 
         &-three {
@@ -32,22 +39,63 @@
     }
 
     &__image-one {
-        top: 0;
+        top: -20px;
         width: 36.406vw;
         height: auto;
     }
 
     &__image-two {
         right: 0;
-        top: 15.625vw;
+        top: 5rem;
         width: 20.625vw;
         height: auto;
+        line-height: 1;
     }
 
     &__image-three {
-        bottom: 2vw;
-        left: 14.375vw;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
         width: 38.75vw;
         height: auto;
+    }
+}
+
+
+@include mixins.media(sm) {
+    .three-words-images {
+        &__text {
+            width: 58.75vw;
+            margin: 0 auto;
+
+            &-two {
+                margin: 6.822vw 0;
+            }
+        }
+
+        &__image-one {
+            top: 0;
+            width: 36.406vw;
+            height: auto;
+            line-height: 1;
+        }
+    
+        &__image-two {
+            right: 0;
+            top: 15.625vw;
+            width: 20.625vw;
+            height: auto;
+            line-height: 80px;
+            line-height: 1;
+        }
+    
+        &__image-three {
+            bottom: 2vw;
+            left: 14.375vw;
+            width: 38.75vw;
+            height: auto;
+            transform: translate(0, 0);
+            line-height: 1;
+        }
     }
 }

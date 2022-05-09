@@ -252,7 +252,7 @@ body {
 }
 
 .font-xl {
-    @include mixins.font-res(90);
+    font-size: clamp(30px, 8vw, 90px);
     line-height: 1.1;
 
     em {
@@ -282,7 +282,7 @@ body {
 
 .three-words-images__text {
     p {
-        @include mixins.font-res(150);
+        font-size: clamp(50px, 8vw, 150px);
     }
 }
 
@@ -302,6 +302,7 @@ body {
     line-height: 1;
     position: relative;
     transition: all 0.25s;
+    @include mixins.font-res(16);
 
     &:after {
         content: url('#{variables.$theme__path}/assets/image/btn-arrow.png');
@@ -341,6 +342,7 @@ body {
     position: relative;
     transition: all 0.25s;
     color: #{variables.$white};
+    @include mixins.font-res(16);
 
     &:after {
         content: url('#{variables.$theme__path}/assets/image/white-btn-arrow.png');

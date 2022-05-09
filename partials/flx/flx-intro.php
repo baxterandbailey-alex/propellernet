@@ -10,7 +10,7 @@ $textColour = get_sub_field('text_colour');
 <section class="intro bg-<?php if($bgColour) : echo $bgColour; endif;?>">
     <?php if ($introTitle) : ?>
         <div class="intro-title <?php if ($textColour === 'white') : ?>white-text<?php endif; ?>">
-            <h2 class="font-freight font-intro"><?php echo $introTitle; ?></h2>
+            <div class="font-freight font-intro"><?php echo $introTitle; ?></div>
         </div>
     <?php endif; ?>
 

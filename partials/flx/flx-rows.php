@@ -112,4 +112,8 @@ elseif (get_row_layout() == 'flx_work_link') :
 elseif (get_row_layout() == 'flx_climate_targets') :
     get_template_part('partials/flx/flx', 'climate-targets');
 
+//  Image Grid
+elseif (get_row_layout() == 'flx_image_grid') :
+    get_template_part('partials/flx/flx', 'image-grid');
+
 endif;

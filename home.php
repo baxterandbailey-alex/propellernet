@@ -25,6 +25,7 @@ get_template_part('partials/header', 'select');
     <?php if($_posts->have_posts()): ?>
         <?php while ($_posts->have_posts()) : $_posts->the_post();?>
             <div class="posts__featured-card">
+                <div class="img-overlay"></div>
                 <?php the_post_thumbnail(); ?>
                 <div class="posts__featured-text">
                     <?php the_excerpt(); ?>

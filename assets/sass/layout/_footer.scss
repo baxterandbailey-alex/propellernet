@@ -60,8 +60,8 @@ footer#site-footer {
 
 .cta {
     text-align: center;
-    padding-top: 8.385vw;
-    padding-bottom: 7.604vw;
+    @include mixins.p-top(10);
+    @include mixins.p-bot(9);
 
     p {
         padding-bottom: 2.291vw;

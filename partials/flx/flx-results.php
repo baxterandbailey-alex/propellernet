@@ -5,7 +5,7 @@
 
 <section class="results bg-light-green">
     <p class="font-freight font-large"><?php echo $title; ?></p>
-    <p class="font-baseticaLight font-reg"><?php echo $introText; ?></p>
+    <p class="font-baseticaLight font-reg results__intro-text"><?php echo $introText; ?></p>
     <div class="results__container">
         <?php
             if( have_rows('results') ):

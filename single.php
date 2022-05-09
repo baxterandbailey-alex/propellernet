@@ -3,6 +3,7 @@
 $twitter = get_field('options_social_twitter', 'option');
 $facebook = get_field('options_social_facebook', 'option');
 $linkedin = get_field('options_social_linkedin', 'option');
+$overlay = get_field('image_overlay');
 get_header(); ?>
 
 	<section class="post">
@@ -11,6 +12,9 @@ get_header(); ?>
         while ( have_posts() ) : the_post(); ?>
             <div class="post__header">
                 <?php the_post_thumbnail(); ?>
+                <?php if ($overlay) : ?>
+                    <div class="img-overlay"></div>
+                <?php endif; ?>
             </div>
             <div class="post__container">
                 
@@ -35,21 +39,18 @@ get_header(); ?>
                     <div class="post__content">
                         <?php the_content(); ?>
                         <div class="post__socials">
-                            <a href="<?php echo $linkedin; ?>" target="_blank"><img src="<?php echo get_template_directory_uri().'/assets/image/linkedin.png'; ?>"></a>
-                            <a href="<?php echo $twitter; ?>" target="_blank"><img src="<?php echo get_template_directory_uri().'/assets/image/twitter.png'; ?>"></a>
-                            <a href="<?php echo $facebook; ?>" target="_blank"><img src="<?php echo get_template_directory_uri().'/assets/image/facebook.png'; ?>"></a>
+                            <a href="http://www.linkedin.com/shareArticle?mini=true&url=<?php echo get_permalink() ?>&title=<?php the_title() ?>&summary=<?php the_excerpt() ?>" target="_blank"><img src="<?php echo get_template_directory_uri().'/assets/image/linkedin.png'; ?>"></a>
+                            <a href="http://www.twitter.com/share?url=<?php echo get_permalink(); ?>" target="_blank"><img src="<?php echo get_template_directory_uri().'/assets/image/twitter.png'; ?>"></a>
+                            <a href="http://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink() ?>&id=<?php echo get_permalink() ?>}&scrape=true" target="_blank"><img src="<?php echo get_template_directory_uri().'/assets/image/facebook.png'; ?>"></a>
                         </div>
                     </div>
 
                 </div>
             </div>
-            
-            
-            
-            
         <?php endwhile; ?>
 		
     </section>
 
 <?php
 get_footer();
+

@@ -1,0 +1,84 @@
+@use '../utilities/functions';
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+
+.navbar-menu {
+    background-color: #0C2E2B;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+
+
+    ul {
+      li {
+        color: white;
+        line-height: 1.1;
+        font-family: 'freight';
+            a {
+                position: relative;
+                @include mixins.font-res(90);
+            }
+        }
+
+      .current-menu-item {
+        color: variables.$light_green;
+
+        [aria-current] {
+        &::before {
+            content: " ";
+            background-image: url('#{variables.$theme__path}/assets/image/left-menu-bracket.png');
+            background-size: contain;
+            width: 16px;
+            height:100%;
+            position: absolute;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+        }
+
+        &::after {
+            content: " ";
+            background-image: url('#{variables.$theme__path}/assets/image/right-menu-bracket.png');
+            background-size: contain;
+            width: 16px;
+            height:100%;
+            position: absolute;
+            right: -30px;
+            top: 0;
+            bottom: 0;
+            }
+        }
+      }
+    }
+
+    .sub-menu {
+        li {
+            a {
+                font-family: 'baseticaLight';
+                @include mixins.font-res(22);
+            }
+        }
+
+        .current-menu-item {
+            color: white;
+            [aria-current] {
+                &::before {
+                    content: none;
+                }
+        
+                &::after {
+                    content: none;
+                }
+            }
+        }  
+    }
+}
+

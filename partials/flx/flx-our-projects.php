@@ -7,7 +7,7 @@ $projectsSectionTitle = get_sub_field('title');
     <?php if ($projectsSectionTitle) : ?>
         <div class="our-projects__header">
             <h2 class="font-freight font-large"><?php echo $projectsSectionTitle; ?></h2>
-            <a class="baseticaLight" href="#">VIEW ALL</a>
+            <a class="baseticaLight" href="<?php echo site_url('/our-work'); ?>">VIEW ALL</a>
         </div>
     <?php endif; ?>
 
@@ -19,8 +19,12 @@ $projectsSectionTitle = get_sub_field('title');
                 $slideImg = get_sub_field('project_image');
                 $slideProject = get_sub_field('project_title');
                 $slideLink = get_sub_field('project_link');
+                $overlay = get_sub_field('image_overlay');
                 ?>
             <div class="splide__slide" data-splide-interval="10000">
+                <?php if ($overlay) : ?>
+                    <div class="img-overlay"></div>
+                <?php endif; ?>
                 <figure class="splide__img">
                     <img src="<?php echo $slideImg; ?>" alt="">
                 </figure>
@@ -43,6 +47,6 @@ $projectsSectionTitle = get_sub_field('title');
     <script>new Splide( '.splide', {
         type: 'loop',
         perPage: 1,
-        // autoplay: true
+        autoplay: true
     } ).mount();</script>
 </section>

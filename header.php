@@ -10,6 +10,7 @@
  $headerTitle = get_field('header_title');
  $headerText = get_field('header_text');
  $headerLink = get_field('header_link');
+ $headerOverlay = get_field('header_overlay');
 
  $serviceTitle = get_field('service_title');
  $serviceImage = get_field('service_image');
@@ -42,7 +43,6 @@
     <?php wp_body_open(); ?>
 
     <a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e('Skip to content', 'bbwp'); ?></a>
-
     <!-- SERVICES HEADER -->
     <?php if( $serviceTitle ) : ?>
         <header class="nav-down nav service-header">
@@ -69,18 +69,21 @@
     <?php else : ?>
 
     <!-- SITE HEADER -->
-    <header id="site-header" class="nav-down nav">
+    <header class="site-header <?php if(!$headerTitle) : ?>image-site-header<?php endif; ?> nav-down nav">
         <?php get_template_part('partials/site/site', 'navbar'); ?>
         <?php if ( $headerImg ) : ?>
             <img src="<?php echo $headerImg; ?>" alt="header" class="header__background">
+        <?php endif; ?>
+        <?php if ($headerOverlay) : ?>
+            <div class="img-overlay"></div>
         <?php endif; ?>
         <div class="header__content">
 
             <?php if ( $headerTitle ) : ?>
                 <div class="header__quote">
-                    <img class="header__left-bracket" src="<?php echo get_template_directory_uri().'/assets/image/white-bracket-left.png'; ?>">
+                    <img class="header__left-bracket" src="<?php echo get_template_directory_uri().'/assets/image/large-left-white-bracket.png'; ?>">
                     <h2 class="white-text font-freight font-xl"><?php echo $headerTitle; ?></h2>
-                    <img class="header__right-bracket" src="<?php echo get_template_directory_uri().'/assets/image/white-bracket-right.png'; ?>">
+                    <img class="header__right-bracket" src="<?php echo get_template_directory_uri().'/assets/image/large-right-white-bracket.png'; ?>">
                 </div>
             <?php endif; ?>
             <?php if ( $headerText ) : ?>
@@ -97,15 +100,32 @@
     </header>
     <?php endif; ?>
 
-    <div class="navbar-menu">
+    <!-- MMENU -->
+    <!-- <div class="navbar-menu navbar-menu__mobile-wrapper" id="menu-container">
+        <div id="menu-inner">
+            <?php
+            // Desktop
+            wp_nav_menu(array(
+                'theme_location'    => 'menu-1',
+                'menu_id'           => 'menu-main',
+                'container'         => false,
+            ));
+            ?>
+        </div>
+    </div> -->
+
+    <div class="navbar-menu">     
         <?php
-        // Desktop
+        // Mobile
         wp_nav_menu(array(
             'theme_location'    => 'menu-1',
             'menu_id'           => 'menu-main',
-            'container'         => false
+            'container'         => false,
         ));
         ?>
     </div>
 
+
     <main id="site-content">
+
+    

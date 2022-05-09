@@ -10,6 +10,9 @@
         position: relative;
 
         img {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -43,11 +46,11 @@
     }
 
     &__featured-text {
-        position: absolute;
-        left: 50%;
-        bottom: 2.6rem;
-        transform: translate(-50%, 0);
-        width: 32vw;
+        margin: 0 auto;
+        @include mixins.p-top(48);
+        @include mixins.p-bot(2.625);
+        position: relative;
+        width: 70%;
         text-align: center;
         color: white;
         display: flex;
@@ -83,6 +86,9 @@
     }
 
     &__featured-link {
+        img {
+            position: relative;
+        }
         a {
             border-bottom: 1px solid white;
         }
@@ -95,6 +101,11 @@
             @include mixins.grid(85px, 2);
             width: 71vw;
             margin: 3rem auto 8.5vw auto;
+            padding: 0;
+        }
+
+        &__featured-text {
+            width: 32vw;
         }
     }
 }
@@ -103,6 +114,18 @@
     .posts {
         &__grid {
             @include mixins.grid(85px, 3);
+        }
+
+        &__featured-text {
+            padding-top: 40vw
+        }
+    }
+}
+
+@include mixins.media(xxl) {
+    .posts {
+        &__featured-text {
+            @include mixins.p-top(44);
         }
     }
 }

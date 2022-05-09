@@ -2,17 +2,19 @@
 
 .process {
 
-    padding-bottom: 9vw;
+
     &__title {
         padding-left: 7vw;
         padding-top: 5.572vw;
     }
 
     &__textbox  {
-        width: 45vw;
-        margin: 11vw auto 14vw auto;
-        border-left: solid 1px #707070;
-        padding-left: 2vw;
+        width: 86vw;
+        @include mixins.m-top(12.75);
+        @include mixins.m-bot(16.875);
+        margin-left: 7vw;
+        margin-right: 7vw;
+
 
         p:not(:last-child) {
             margin-bottom: 2rem;
@@ -21,8 +23,7 @@
 
     &__casestudy {
         position: relative;
-        width: 71.25vw;
-        margin: 0 auto;
+        width: 100%;
     }
 
     &__img {
@@ -58,12 +59,12 @@
 
         p {
             z-index: 1;
-            @include mixins.font-res(200);
+            font-size: clamp(50px, 8vw, 200px);
         }
 
 
         img {
-            width: 1.5rem;
+            width: 0.75rem;
             z-index: 1;
         }
     }
@@ -90,11 +91,46 @@
     &__backBtn {
         display: flex;
         align-items: center;
-        padding-left: 7.291vw;
+        padding-left: 7vw;
         padding-top: 2rem;
 
         img {
             margin-right: 1rem;
+        }
+    }
+}
+
+
+@include mixins.media(sm) {
+    .process {
+        @include mixins.p-bot(11.8);
+        &__textbox  {
+            width: 71vw;
+            border-left: solid 1px #707070;
+            padding-left: 2vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__casestudy {
+            width: 71.25vw;
+            max-width: 85rem;
+            margin: 0 auto;
+        }
+
+        &__casestudyName {    
+            img {
+                width: 1.5rem;
+            }
+        }
+    }
+}
+
+@include mixins.media(lg) {
+    .process {
+        &__textbox  {
+            width: 45vw;
+            max-width: 50rem;
         }
     }
 }

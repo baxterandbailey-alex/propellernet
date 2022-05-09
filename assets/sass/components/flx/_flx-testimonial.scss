@@ -51,9 +51,6 @@
 @include mixins.media(sm) {
 
     .testimonial {
-        @include mixins.p-top(10.562);
-        @include mixins.p-bot(8.562);
-
         &__container {
             width: 80%;
             @include mixins.p-bot(1.062);

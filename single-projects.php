@@ -6,6 +6,8 @@
  * @package BBWP
  */
 
+$overlay = get_field('image_overlay');
+
 get_header();
 get_template_part('partials/header', 'select');
 while ( have_posts() ) : the_post() 
@@ -21,7 +23,9 @@ while ( have_posts() ) : the_post()
                     <img class="header__right-bracket" src="<?php echo get_template_directory_uri().'/assets/image/white-bracket-right.png'; ?>">
                 </div>
 
-            
+            <?php if ($overlay) : ?>
+                <div class="img-overlay"></div>
+            <?php endif ?>
         </div>
 
         <div class="product__backBtn">

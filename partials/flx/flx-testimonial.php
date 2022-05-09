@@ -31,5 +31,4 @@ $testimonialAuthor = get_sub_field('testimonial_author');
     </div>
 
 </div>
-
 </section>

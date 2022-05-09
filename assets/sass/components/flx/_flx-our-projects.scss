@@ -1,4 +1,7 @@
+@use '../../utilities/mixins';
+
 .our-projects {
+    margin-top: 2rem;
     &__header {
         width: 85.416vw;
         border-top: 1px #707070 solid;
@@ -7,5 +10,11 @@
         align-items: center;
         margin: 0 auto 3.906vw auto;
         padding-top: 2.812vw;
+    }
+}
+
+@include mixins.media(sm) {
+    .our-projects {
+        margin-top: 0;
     }
 }

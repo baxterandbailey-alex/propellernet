@@ -100,8 +100,12 @@ $bCorpLogo = get_field('b_corp_logo', 'option');
     <div class="footer__policys">
         <div class="footer__policys--links">
             <p>&copy; <?php echo date("Y"); ?> Propellernet</p>
-            <a href="#">Terms and Conditions</a>
-            <a href="#">Cookies</a>
+            <?php if( have_rows('policy_links', 'option')) :
+                while( have_rows('policy_links', 'option') ) : the_row();
+                    $link = get_sub_field('link');
+                    $linkText = get_sub_field('link_title');?>
+                    <a href="<?php echo $link; ?>"><?php echo $linkText; ?></a>
+            <?php endwhile; endif; ?>
         </div>
         <div class="footer__policys--img">
             <img src="<?php echo $bCorpLogo ?>" alt="">

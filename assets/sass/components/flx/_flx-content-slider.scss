@@ -22,6 +22,7 @@
 
         h4 {
             @include mixins.m-bot(2.3);
+            @include mixins.m-top(2.3);
         }
     }
 
@@ -48,7 +49,12 @@
     .splide__slide figure, .splide__slide img {
         width: 100%;
         height: auto;
-        margin-bottom: 2.3rem;
+    }
+
+    .splide__slide {
+        figure {
+            position: relative;
+        }
     }
 
     .splide__arrows {

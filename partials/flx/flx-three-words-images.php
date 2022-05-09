@@ -14,9 +14,11 @@
     <?php endif; ?>
     <div class="three-words-images__container">
         <div class="three-words-images__text">
-            <p class="three-words-images__text-one font-freight"><?php echo $wordOne; ?></p>
-            <p class="three-words-images__text-two font-freight"><?php echo $wordTwo; ?></p>
-            <p class="three-words-images__text-three font-freight"><?php echo $wordThree; ?></p>
+            <a href="<?php echo site_url('/meet-the-team'); ?>">
+                <p class="three-words-images__text-one font-freight"><?php echo $wordOne; ?></p>
+                <p class="three-words-images__text-two font-freight"><?php echo $wordTwo; ?></p>
+                <p class="three-words-images__text-three font-freight"><?php echo $wordThree; ?></p>
+            </a>
         </div>
         <img class="three-words-images__image-one" src="<?php echo $imageOne; ?>" alt="">
 

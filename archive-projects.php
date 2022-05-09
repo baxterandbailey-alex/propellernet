@@ -5,9 +5,9 @@
  *
  * @package rsa
  */
-
-get_header();
 $header = get_field('our_work_header_image', 'option');
+get_header();
+
 ?>
 
 <div class="our-work__header">
@@ -35,9 +35,6 @@ $header = get_field('our_work_header_image', 'option');
     ?>
 </section>
 
-<?php
-
-?>
 <section class="our-work">
     <h2 class="font-large font-freight">Our projetcs</h2>
 
@@ -55,6 +52,7 @@ $header = get_field('our_work_header_image', 'option');
 
     <?php if($_projects->have_posts()): ?>
         <?php while ($_projects->have_posts()) : $_projects->the_post();?>
+                <div class="img-overlay"></div>
             <?php the_post_thumbnail(); ?>
             <div class="our-work__featured-text">
                 <h4 class="white-text font-baseticaLight font-reg"><?php the_title(); ?></h4>
@@ -69,7 +67,7 @@ $header = get_field('our_work_header_image', 'option');
     <article id="page-id-<?php echo get_the_ID(); ?>" class="flx-wrapper our-work__grid">
         <?php while( have_posts() ) : the_post(); ?>
             <div class="our-work__card">
-            <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+            <a class="our-work__img-link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
                 <h4 class="font-baseticaMedium"><?php the_title(); ?></h4>
                 <p class="font-baseticaLight"><?php the_excerpt(); ?></p>
                 <div class="our-work__cardLink">

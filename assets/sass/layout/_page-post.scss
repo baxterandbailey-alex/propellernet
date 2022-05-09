@@ -4,6 +4,10 @@
 
 .post {
 
+    &__header {
+        position: relative;
+    }
+
     &__container {
         padding: 2.5rem 7vw 7vw 7vw;
 
